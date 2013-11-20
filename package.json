@@ -1,0 +1,38 @@
+{
+    "name": "generator-alchemy",
+    "version": "0.1.0",
+    "description": "A Yeoman generator for a Web app, with requirejs",
+    "keywords": [
+        "yeoman-generator",
+        "yeoman",
+        "webapp",
+        "web",
+        "requirejs"
+    ],
+    "homepage": "https://github.com/marcol/generator-alchemy",
+    "bugs": "https://github.com/marcol/generator-alchemy/issues",
+    "author": {
+        "name": "Marco Dias Lopes",
+        "url": "https://github.com/marcol"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/marcol/generator-alchemy.git"
+    },
+    "scripts": {},
+    "dependencies": {
+        "yeoman-generator": "~0.13.0"
+    },
+    "devDependencies": {},
+    "peerDependencies": {
+        "yo": ">=1.0.0"
+    },
+    "engines": {
+        "node": ">=0.8.0",
+        "npm": ">=1.2.10"
+    },
+    "readmeFilename": "readme.md",
+    "licenses": [{
+        "type": "MIT"
+    }]
+}
