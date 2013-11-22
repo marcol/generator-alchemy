@@ -1,50 +1,88 @@
-'use strict';
-var util = require('util');
-var path = require('path');
-var yeoman = require('yeoman-generator');
+/*jshint node:true*/
 
+(function (global, undefined) {
 
-var AlchemyGenerator = module.exports = function AlchemyGenerator(args, options, config) {
-  yeoman.generators.Base.apply(this, arguments);
+    'use strict';
 
-  this.on('end', function () {
-    this.installDependencies({ skipInstall: options['skip-install'] });
-  });
+    var util = require('util'),
+        path = require('path'),
+        yeoman = require('yeoman-generator'),
+        AlchemyGenerator;
 
-  this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
-};
+    AlchemyGenerator = function AlchemyGenerator(args, options, config) {
 
-util.inherits(AlchemyGenerator, yeoman.generators.Base);
+        yeoman.generators.Base.apply(this, arguments);
 
-AlchemyGenerator.prototype.askFor = function askFor() {
-  var cb = this.async();
+        this.on('end', function () {
+            this.installDependencies({
+                skipInstall: options['skip-install']
+            });
+        });
 
-  // have Yeoman greet the user.
-  console.log(this.yeoman);
+        this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
+    };
 
-  var prompts = [{
-    type: 'confirm',
-    name: 'someOption',
-    message: 'Would you like to enable this option?',
-    default: true
-  }];
+    util.inherits(AlchemyGenerator, yeoman.generators.Base);
 
-  this.prompt(prompts, function (props) {
-    this.someOption = props.someOption;
+    AlchemyGenerator.prototype.askFor = function askFor() {
+        
+        var prompts = [],
+            cb = this.async();
 
-    cb();
-  }.bind(this));
-};
+        // have Yeoman greet the user.
+        console.log(this.yeoman);
 
-AlchemyGenerator.prototype.app = function app() {
-  this.mkdir('app');
-  this.mkdir('app/templates');
+        prompts.push({
+            type: 'confirm',
+            name: 'deploy',
+            message: 'Do you want to deploy Alchemy generator?',
+            default: true
+        });
 
-  this.copy('_package.json', 'package.json');
-  this.copy('_bower.json', 'bower.json');
-};
+        this.prompt(prompts, function (props) {
 
-AlchemyGenerator.prototype.projectfiles = function projectfiles() {
-  this.copy('editorconfig', '.editorconfig');
-  this.copy('jshintrc', '.jshintrc');
-};
+            this.deploy = props.deploy;
+
+            if (this.deploy) {
+                cb();
+            } else {
+                return false;
+            }
+
+        }.bind(this));
+
+    };
+
+    AlchemyGenerator.prototype.app = function app() {
+
+        // app folder strcture
+        this.mkdir('app');
+        this.mkdir('app/scripts');
+        this.mkdir('app/templates');
+        this.mkdir('app/styles');
+        this.mkdir('app/css');
+        this.mkdir('app/bin');
+        this.mkdir('app/dist');
+
+        // server folder structure
+        this.mkdir('server');
+
+        // setup files
+        this.copy('_package.json', 'package.json');
+        this.copy('_bower.json', 'bower.json');
+        this.copy('_GruntFile.js', 'GruntFile.js');
+
+        // content
+        this.copy('_index.html', 'index.html');
+    };
+
+    AlchemyGenerator.prototype.projectfiles = function projectfiles() {
+        this.copy('editorconfig', '.editorconfig');
+        this.copy('jshintrc', '.jshintrc');
+        this.copy('bowerrc', '.bowerrc');
+    };
+
+    // export
+    module.exports = AlchemyGenerator;
+
+}(this));
