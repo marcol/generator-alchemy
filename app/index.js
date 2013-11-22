@@ -71,6 +71,8 @@
         this.copy('_package.json', 'package.json');
         this.copy('_bower.json', 'bower.json');
         this.copy('_GruntFile.js', 'GruntFile.js');
+        this.copy('_README.md', 'README.md');
+        this.copy('_main.js', 'app/scripts/main.js');
 
         // content
         this.copy('_index.html', 'index.html');

@@ -1,0 +1,34 @@
+Setup features:
+ ☐ Config default items in package.json
+ ☐ Config default items in bower.json
+ ✔ Set app structure @done (13-11-22 13:54)
+ ☐ Add setup prompt
+
+Bower:
+ ✔ Add polyfills @done (13-11-22 13:48)
+ ✔ Add modernizr @done (13-11-22 11:59)
+ ✔ Add normalize-less @done (13-11-22 11:59)
+ ✔ RequireJS @done (13-11-22 11:59)
+ ✔ Lesshat @done (13-11-22 11:59)
+
+Grunt:
+ ☐ JSHint
+ ☐ RequireJS
+ ☐ Uglifyjs
+ ☐ Deploy workflow
+ ☐ Development workflow
+ ☐ Less
+ ☐ LiveReload
+ ☐ Server
+ ☐ Modernizr
+
+NPM:
+ ☐ Grunt dependencies
+
+Other tasks:
+  ☐ Improve documentation
+  ☐ Create sub-generator for basic
+  ☐ Create sub-generator with Backbone
+  ☐ Create sub-generator with Handlebars
+  ☐ Create sub-generator with jQuery
+
