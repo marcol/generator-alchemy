@@ -9,6 +9,17 @@
         yeoman = require('yeoman-generator'),
         AlchemyGenerator;
 
+    function extractGeneratorName(_, appname) {
+        var slugged = _.slugify(appname),
+            match = slugged.match(/^generator-(.+)/);
+
+        if (match && match.length === 2) {
+            return match[1].toLowerCase();
+        }
+
+        return slugged;
+    }
+
     AlchemyGenerator = function AlchemyGenerator(args, options, config) {
 
         yeoman.generators.Base.apply(this, arguments);
@@ -39,9 +50,23 @@
             default: true
         });
 
+        prompts.push({
+            name: 'projName',
+            message: 'What\'s your project name?',
+            default: extractGeneratorName(this._, this.appname)
+        });
+
+        prompts.push({
+            name: 'projVersion',
+            message: 'What\'s your project version?',
+            default: '0.0.0'
+        });
+
         this.prompt(prompts, function (props) {
 
             this.deploy = props.deploy;
+            this.projName = props.projName;
+            this.projVersion = props.projVersion;
 
             if (this.deploy) {
                 cb();
@@ -68,14 +93,17 @@
         this.mkdir('server');
 
         // setup files
-        this.copy('_package.json', 'package.json');
-        this.copy('_bower.json', 'bower.json');
-        this.copy('_GruntFile.js', 'GruntFile.js');
-        this.copy('_README.md', 'README.md');
+        this.template('_package.json', 'package.json');
+        this.template('_bower.json', 'bower.json');
+        this.template('_GruntFile.js', 'GruntFile.js');
+        this.template('_README.md', 'README.md');
         this.copy('_main.js', 'app/scripts/main.js');
 
         // content
-        this.copy('_index.html', 'index.html');
+        this.template('_index.html', 'index.html');
+        // this.template('app/404.html');
+        // this.template('app/favicon.ico');
+        // this.template('app/robots.txt');
     };
 
     AlchemyGenerator.prototype.projectfiles = function projectfiles() {
