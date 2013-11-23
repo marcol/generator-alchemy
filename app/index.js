@@ -62,11 +62,32 @@
             default: '0.0.0'
         });
 
+        prompts.push({
+            name: 'projAuthor',
+            message: 'Who\'s the author?',
+            default: ''
+        });
+
+        prompts.push({
+            name: 'projDescription',
+            message: 'Can you add a small discription of the project?',
+            default: ''
+        });
+
+        prompts.push({
+            name: 'projUrl',
+            message: 'Can you add the projects url?',
+            default: ''
+        });
+
         this.prompt(prompts, function (props) {
 
             this.deploy = props.deploy;
             this.projName = props.projName;
             this.projVersion = props.projVersion;
+            this.projAuthor = props.projAuthor;
+            this.projDescription = props.projDescription;
+            this.projUrl = props.projUrl;
 
             if (this.deploy) {
                 cb();

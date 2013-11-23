@@ -1,0 +1,2 @@
+#<%= _.slugify(projName) %>
+<%= projDescription %>
