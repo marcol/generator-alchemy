@@ -122,9 +122,10 @@
 
         // content
         this.template('_index.html', 'index.html');
-        // this.template('app/404.html');
-        // this.template('app/favicon.ico');
-        // this.template('app/robots.txt');
+        this.template('_404.html', '404.html');
+        this.copy('_robots.txt', 'robots.txt');
+        this.copy('_humans.txt', 'humans.txt');
+        this.copy('_crossdomain.xml', 'crossdomain.xml');
     };
 
     AlchemyGenerator.prototype.projectfiles = function projectfiles() {
