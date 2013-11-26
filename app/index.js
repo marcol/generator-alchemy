@@ -70,15 +70,28 @@
 
         prompts.push({
             name: 'projDescription',
-            message: 'Can you add a small discription of the project?',
+            message: 'Can you add a discription of the project?',
+            default: ''
+        });
+
+        prompts.push({
+            name: 'projKeywords',
+            message: 'Can you add some keywords for the project?',
+            default: ''
+        });
+
+        prompts.push({
+            name: 'projRepository',
+            message: 'What\'s the git repository url?',
             default: ''
         });
 
         prompts.push({
             name: 'projUrl',
-            message: 'Can you add the projects url?',
+            message: 'Can you add the project\'s url?',
             default: ''
         });
+
 
         this.prompt(prompts, function (props) {
 
@@ -88,6 +101,8 @@
             this.projAuthor = props.projAuthor;
             this.projDescription = props.projDescription;
             this.projUrl = props.projUrl;
+            this.projKeywords = props.projKeywords;
+            this.projRepository = props.projRepository;
 
             if (this.deploy) {
                 cb();
@@ -106,7 +121,6 @@
         this.mkdir('app/scripts');
         this.mkdir('app/templates');
         this.mkdir('app/styles');
-        this.mkdir('app/css');
         this.mkdir('app/bin');
         this.mkdir('app/dist');
 
@@ -118,20 +132,45 @@
         this.template('_bower.json', 'bower.json');
         this.template('_GruntFile.js', 'GruntFile.js');
         this.template('_README.md', 'README.md');
-        this.copy('_main.js', 'app/scripts/main.js');
 
         // content
-        this.template('_index.html', 'index.html');
-        this.template('_404.html', '404.html');
-        this.copy('_robots.txt', 'robots.txt');
-        this.copy('_humans.txt', 'humans.txt');
-        this.copy('_crossdomain.xml', 'crossdomain.xml');
+        this.template('_index.html', 'app/index.html');
+        this.template('_404.html', 'app/404.html');
+        this.template('_robots.txt', 'app/robots.txt');
+        this.template('_humans.txt', 'app/humans.txt');
+        this.copy('_crossdomain.xml', 'app/crossdomain.xml');
     };
 
-    AlchemyGenerator.prototype.projectfiles = function projectfiles() {
+    AlchemyGenerator.prototype.scripts = function scripts() {
+        this.copy('scripts/_main.js', 'app/scripts/main.js');
+    };
+
+    AlchemyGenerator.prototype.styles = function styles() {
+
+        // base
+        this.copy('styles/_animations.less', 'app/styles/animations.less');
+        this.copy('styles/_icons.less', 'app/styles/icons.less');
+        this.copy('styles/_mixins.less', 'app/styles/mixins.less');
+        this.copy('styles/_vars.less', 'app/styles/vars.less');
+
+        // styles
+        this.copy('styles/_layout.less', 'app/styles/layout.less');
+        this.copy('styles/_typography.less', 'app/styles/typography.less');
+        this.copy('styles/_styles.less', 'app/styles/styles.less');
+
+        // css
+        this.copy('dist/_styles.css', 'app/dist/styles.css');
+        
+    };
+
+    AlchemyGenerator.prototype.dotfiles = function dotfiles() {
         this.copy('editorconfig', '.editorconfig');
         this.copy('jshintrc', '.jshintrc');
         this.copy('bowerrc', '.bowerrc');
+    };
+
+    AlchemyGenerator.prototype.grunt = function grunt() {
+        // TODO run grunt scripts
     };
 
     // export
