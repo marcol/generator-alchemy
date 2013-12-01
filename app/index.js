@@ -169,10 +169,6 @@
         this.copy('bowerrc', '.bowerrc');
     };
 
-    AlchemyGenerator.prototype.grunt = function grunt() {
-        // TODO run grunt scripts
-    };
-
     // export
     module.exports = AlchemyGenerator;
 

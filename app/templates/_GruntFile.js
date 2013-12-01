@@ -21,21 +21,19 @@ module.exports = function (grunt) {
         'less': {
             dev: {
                 options: {
-                    paths: ['app/styles'],
                     sourceMap: true
                 },
                 files: {
-                    '../dist/styles.css': 'styles.less'
+                    'app/dist/styles.css': 'app/styles/styles.less'
                 }
             },
-            deploy: {
+            build: {
                 options: {
-                    paths: ['app/styles'],
                     compress: true,
                     report: true
                 },
                 files: {
-                    '../dist/styles.css': 'styles.less'
+                    'app/dist/styles.css': 'app/styles/styles.less'
                 }
             }
         },
@@ -69,8 +67,8 @@ module.exports = function (grunt) {
         },
 
         growl: {
-            deploy: {
-                message : 'Grunt deploy process finished.',
+            build: {
+                message : 'Grunt build process finished.',
                 title : '<%= _.slugify(projName) %>'
             },
             less: {
@@ -88,7 +86,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-modernizr');
 
     // Default task(s).
-    grunt.registerTask('deploy', ['less:deploy', 'modernizr', 'growl:deploy']);
+    grunt.registerTask('build', ['less:build', 'modernizr', 'growl:build']);
     grunt.registerTask('default', ['less:dev', 'watch']);
 
 };
