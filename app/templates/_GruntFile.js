@@ -4,12 +4,17 @@ module.exports = function (grunt) {
 
     'use strict';
 
-    // Project configuration.
     grunt.initConfig({
 
-        'watch': {
+        config: {
+            dev: 'src',
+            dist: 'dist',
+            bower: 'src/bower_components'
+        },
+
+        watch: {
             less: {
-                files: ['app/styles/*.less'],
+                files: ['<%= config.src %>/styles/*.less'],
                 tasks: ['less:dev', 'growl:less'],
                 options: {
                     spawn: false,
@@ -18,13 +23,13 @@ module.exports = function (grunt) {
             }
         },
 
-        'less': {
+        less: {
             dev: {
                 options: {
                     sourceMap: true
                 },
                 files: {
-                    'app/dist/styles.css': 'app/styles/styles.less'
+                    '<%= config.dev %>/styles/styles.css': '<%= config.dev %>/styles/styles.less'
                 }
             },
             build: {
@@ -33,15 +38,15 @@ module.exports = function (grunt) {
                     report: true
                 },
                 files: {
-                    'app/dist/styles.css': 'app/styles/styles.less'
+                    '<%= config.dist %>/styles/styles.css': '<%= config.dev %>/styles/styles.less'
                 }
             }
         },
 
         modernizr: {
             // Based on default settings on http://modernizr.com/download/
-            'devFile' : 'app/bower_components/modernizr/modernizr.js',
-            'outputFile' : 'app/dist/modernizr.js',
+            'devFile' : '<%= config.bower %>/modernizr/modernizr.js',
+            'outputFile' : '<%= config.dist %>/scripts/modernizr.js',
             'extra' : {
                 'shiv' : true,
                 'printshiv' : false,
@@ -69,11 +74,11 @@ module.exports = function (grunt) {
         growl: {
             build: {
                 message : 'Grunt build process finished.',
-                title : '<%= _.slugify(projName) %>'
+                title : 'testing'
             },
             less: {
                 message : 'Less files compiled.',
-                title : '<%= _.slugify(projName) %>'
+                title : 'testing'
             }
         }
 

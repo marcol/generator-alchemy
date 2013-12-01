@@ -43,6 +43,7 @@
         // have Yeoman greet the user.
         console.log(this.yeoman);
 
+        // FIXME remove me when done
         prompts.push({
             type: 'confirm',
             name: 'deploy',
@@ -117,12 +118,12 @@
     AlchemyGenerator.prototype.app = function app() {
 
         // app folder strcture
-        this.mkdir('app');
-        this.mkdir('app/scripts');
-        this.mkdir('app/templates');
-        this.mkdir('app/styles');
-        this.mkdir('app/bin');
-        this.mkdir('app/dist');
+        this.mkdir('src');
+        this.mkdir('src/scripts');
+        this.mkdir('src/templates');
+        this.mkdir('src/styles');
+        this.mkdir('src/bin');
+        this.mkdir('dist');
 
         // server folder structure
         this.mkdir('server');
@@ -134,32 +135,32 @@
         this.template('_README.md', 'README.md');
 
         // content
-        this.template('_index.html', 'app/index.html');
-        this.template('_404.html', 'app/404.html');
-        this.template('_robots.txt', 'app/robots.txt');
-        this.template('_humans.txt', 'app/humans.txt');
-        this.copy('_crossdomain.xml', 'app/crossdomain.xml');
+        this.template('_index.html', 'src/index.html');
+        this.template('_404.html', 'src/404.html');
+        this.template('_robots.txt', 'src/robots.txt');
+        this.template('_humans.txt', 'src/humans.txt');
+        this.copy('_crossdomain.xml', 'src/crossdomain.xml');
     };
 
     AlchemyGenerator.prototype.scripts = function scripts() {
-        this.copy('scripts/_main.js', 'app/scripts/main.js');
+        this.copy('scripts/_main.js', 'src/scripts/main.js');
     };
 
     AlchemyGenerator.prototype.styles = function styles() {
 
         // base
-        this.copy('styles/_animations.less', 'app/styles/animations.less');
-        this.copy('styles/_icons.less', 'app/styles/icons.less');
-        this.copy('styles/_mixins.less', 'app/styles/mixins.less');
-        this.copy('styles/_vars.less', 'app/styles/vars.less');
+        this.copy('styles/_animations.less', 'src/styles/animations.less');
+        this.copy('styles/_icons.less', 'src/styles/icons.less');
+        this.copy('styles/_mixins.less', 'src/styles/mixins.less');
+        this.copy('styles/_vars.less', 'src/styles/vars.less');
 
         // styles
-        this.copy('styles/_layout.less', 'app/styles/layout.less');
-        this.copy('styles/_typography.less', 'app/styles/typography.less');
-        this.copy('styles/_styles.less', 'app/styles/styles.less');
+        this.copy('styles/_layout.less', 'src/styles/layout.less');
+        this.copy('styles/_typography.less', 'src/styles/typography.less');
+        this.copy('styles/_styles.less', 'src/styles/styles.less');
 
         // css
-        this.copy('dist/_styles.css', 'app/dist/styles.css');
+        this.copy('styles/_styles.css', 'src/styles/styles.css');
         
     };
 
