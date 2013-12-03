@@ -161,26 +161,7 @@ module.exports = function (grunt) {
             ]
         },
 
-        less: {
-            dev: {
-                options: {
-                    sourceMap: true
-                },
-                files: {
-                    '.tmp/styles/styles.css': '<%%= config.src %>/styles/styles.less'
-                }
-            },
-            dist: {
-                options: {
-                    compress: true,
-                    report: true
-                },
-                files: {
-                    '<%%= config.dist %>/styles/styles.css': '<%%= config.src %>/styles/styles.less'
-                }
-            }
-        },
-
+        <% if (includeModernizr) { %>
         modernizr: {
             // Based on default settings on http://modernizr.com/download/
             'devFile' : '<%%= config.bower %>/modernizr/modernizr.js',
@@ -205,6 +186,29 @@ module.exports = function (grunt) {
             'uglify' : true,
             'parseFiles' : true
         },
+        <% } %>
+
+        less: {
+            dev: {
+                options: {
+                    sourceMap: true
+                },
+                files: {
+                    '.tmp/styles/styles.css': '<%%= config.src %>/styles/styles.less'
+                }
+            },
+            dist: {
+                options: {
+                    compress: true,
+                    report: true
+                },
+                files: {
+                    '<%%= config.dist %>/styles/styles.css': '<%%= config.src %>/styles/styles.less'
+                }
+            }
+        },
+
+
 
     });
 
@@ -214,7 +218,7 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'clean:dist',
         'concurrent:dist',
-        'modernizr',
+        <% if (includeModernizr) { %>'modernizr', <% } %>
         'less:dist',
         'copy:dist',
         'rev'
@@ -228,6 +232,7 @@ module.exports = function (grunt) {
 
         grunt.task.run([
             'clean:server',
+            <% if (includeModernizr) { %>'modernizr', <% } %>
             'less:dev',
             'connect:livereload',
             'watch'

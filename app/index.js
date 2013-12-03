@@ -124,8 +124,10 @@
             this.projKeywords = props.projKeywords;
             this.projRepository = props.projRepository;
 
-            // TODO get features
-           console.log(props.features);
+            // get features
+            props.features.forEach(function (element) {
+                generator[element] = true;
+            });
 
             cb();
 
