@@ -1,8 +1,9 @@
 Setup features:
  ☐ Config default items in package.json
+   ☐ Add all Grunt dependencies
  ☐ Config default items in bower.json
  ✔ Set app structure @done (13-11-22 13:54)
- ☐ Add setup prompt
+ ✔ Add setup prompt @done (13-12-03 12:31)
 
 Bower:
  ✔ Add polyfills @done (13-11-22 13:48)
@@ -12,15 +13,30 @@ Bower:
  ✔ Lesshat @done (13-11-22 11:59)
 
 Grunt:
- ☐ JSHint
- ☐ RequireJS
- ☐ Uglifyjs
- ☐ Deploy workflow
- ☐ Development workflow
- ☐ Less
- ☐ LiveReload
- ☐ Server
- ☐ Modernizr
+ ☐ Build workflow:
+   ☐ Clean:dist
+   ☐ concurrent
+     ☐ Image min
+     ☐ SVG min
+     ☐ HTML min
+   ☐ Modernizr
+   ☐ LESS:dist
+   ☐ RequireJS:dist
+   ☐ Copy
+   ☐ Revision
+ ☐ Serve workflow
+   ☐ Dev
+     ☐ Clean:serve
+     ☐ Modernizr
+     ☐ LESS:dev
+     ☐ RequireJS:dev
+     ☐ Connect:livereload
+   ☐ Build
+     ☐ Run Build workflow
+     ☐ Connect
+ ☐ Default workflow
+   ☐ JSHint
+   ☐ Run Build workflow
 
 NPM:
  ☐ Grunt dependencies
@@ -31,4 +47,7 @@ Other tasks:
   ☐ Create sub-generator with Backbone
   ☐ Create sub-generator with Handlebars
   ☐ Create sub-generator with jQuery
+  ☐ Add tests to the generator
+  ☐ Improve documentation
+  ☐ Add support for Mocha
 
