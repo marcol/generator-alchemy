@@ -1,6 +1,5 @@
 Setup features:
  ☐ Config default items in package.json
-   ☐ Add all Grunt dependencies
  ☐ Config default items in bower.json
  ✔ Set app structure @done (13-11-22 13:54)
  ✔ Add setup prompt @done (13-12-03 12:31)
@@ -15,7 +14,7 @@ Bower:
 Grunt:
  ☐ Build workflow:
    ☐ Clean:dist
-   ☐ concurrent
+   ☐ Concurrent
      ☐ Image min
      ☐ SVG min
      ☐ HTML min
@@ -39,7 +38,22 @@ Grunt:
    ☐ Run Build workflow
 
 NPM:
- ☐ Grunt dependencies
+ ☐ Grunt dependencies (--save to add to the package.json)
+   ☐ Clean
+   ☐ Connect
+   ☐ Watch
+   ☐ Modernizr
+   ☐ LESS
+   ☐ RequireJS
+   ☐ jsHint
+   ☐ Rev
+   ☐ LiveReload
+   ☐ Imagemin
+   ☐ SVGmin
+   ☐ HTMLmin
+   ☐ Copy
+   ☐ HandleBars
+   ☐ Concurrent
 
 Other tasks:
   ☐ Improve documentation
