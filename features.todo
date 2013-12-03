@@ -19,7 +19,7 @@ Grunt:
      ☐ Image min
      ☐ SVG min
      ☐ HTML min
-   ☐ Modernizr
+   ☐ Modernizr (optional)
    ☐ LESS:dist
    ☐ RequireJS:dist
    ☐ Copy
@@ -27,7 +27,7 @@ Grunt:
  ☐ Serve workflow
    ☐ Dev
      ☐ Clean:serve
-     ☐ Modernizr
+     ☐ Modernizr (optional)
      ☐ LESS:dev
      ☐ RequireJS:dev
      ☐ Connect:livereload
@@ -43,11 +43,9 @@ NPM:
 
 Other tasks:
   ☐ Improve documentation
-  ☐ Create sub-generator for basic
   ☐ Create sub-generator with Backbone
   ☐ Create sub-generator with Handlebars
   ☐ Create sub-generator with jQuery
   ☐ Add tests to the generator
-  ☐ Improve documentation
   ☐ Add support for Mocha
 

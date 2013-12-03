@@ -41,15 +41,10 @@
             cb = this.async();
 
         // have Yeoman greet the user.
-        console.log(this.yeoman);
-
-        // FIXME remove me when done
-        prompts.push({
-            type: 'confirm',
-            name: 'deploy',
-            message: 'Do you want to deploy Alchemy generator?',
-            default: true
-        });
+        if (!this.options['skip-welcome-message']) {
+            console.log(this.yeoman);
+            console.log('Alchemy Generator!'); // FIXME
+        }
 
         prompts.push({
             name: 'projName',
@@ -93,10 +88,34 @@
             default: ''
         });
 
+        // options
+        prompts.push({
+            type: 'checkbox',
+            name: 'features',
+            message: 'What more would you like?',
+            choices: [{
+                name: 'Modernizr',
+                value: 'includeModernizr',
+                checked: true
+            }, {
+                name: 'jQuery',
+                value: 'includejQuery',
+                checked: false
+            }, {
+                name: 'Handlebars',
+                value: 'includeHandlebars',
+                checked: false
+            }, {
+                name: 'Backbone',
+                value: 'includeBackbone',
+                checked: false
+            }]
+        });
 
         this.prompt(prompts, function (props) {
 
-            this.deploy = props.deploy;
+            var generator = this;
+
             this.projName = props.projName;
             this.projVersion = props.projVersion;
             this.projAuthor = props.projAuthor;
@@ -105,11 +124,10 @@
             this.projKeywords = props.projKeywords;
             this.projRepository = props.projRepository;
 
-            if (this.deploy) {
-                cb();
-            } else {
-                return false;
-            }
+            // TODO get features
+           console.log(props.features);
+
+            cb();
 
         }.bind(this));
 
@@ -120,7 +138,6 @@
         // app folder strcture
         this.mkdir('src');
         this.mkdir('src/scripts');
-        this.mkdir('src/templates');
         this.mkdir('src/styles');
         this.mkdir('src/bin');
         this.mkdir('dist');
@@ -165,6 +182,14 @@
         this.copy('editorconfig', '.editorconfig');
         this.copy('jshintrc', '.jshintrc');
         this.copy('bowerrc', '.bowerrc');
+    };
+
+    AlchemyGenerator.prototype.features = function scripts() {
+
+        if (this.includeHandlebars) {
+            this.mkdir('src/templates');
+        }
+
     };
 
     // export
