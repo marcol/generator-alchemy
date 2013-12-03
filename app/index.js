@@ -131,7 +131,7 @@
         // setup files
         this.template('_package.json', 'package.json');
         this.template('_bower.json', 'bower.json');
-        this.template('_GruntFile.js', 'GruntFile.js');
+        this.template('GruntFile.js');
         this.template('_README.md', 'README.md');
 
         // content
@@ -159,9 +159,6 @@
         this.copy('styles/_typography.less', 'src/styles/typography.less');
         this.copy('styles/_styles.less', 'src/styles/styles.less');
 
-        // css
-        this.copy('styles/_styles.css', 'src/styles/styles.css');
-        
     };
 
     AlchemyGenerator.prototype.dotfiles = function dotfiles() {
