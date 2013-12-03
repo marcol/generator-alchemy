@@ -8,7 +8,6 @@
     "homepage": "<%= projUrl %>",
     "main": "index.html",
     "dependencies": {
-        "http-server": "~0.5.5",
         "grunt-contrib-less": "~0.7.0",
         "grunt-contrib-watch": "~0.5.3",
         "grunt-modernizr": "~0.3.0"
