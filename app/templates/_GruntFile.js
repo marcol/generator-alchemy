@@ -20,7 +20,7 @@ module.exports = function (grunt) {
         },
 
         'bower-install': {
-            app: {
+            src: {
                 html: '<%%= config.src %>/index.html',
                 ignorePath: '<%%= config.src %>/'
             }
@@ -108,6 +108,21 @@ module.exports = function (grunt) {
                     ]
                 }
             }
+        },
+
+        useminPrepare: {
+            options: {
+                dest: '<%%= config.dist %>'
+            },
+            html: '<%%= config.src %>/index.html'
+        },
+
+        usemin: {
+            options: {
+                assetsDirs: ['<%%= config.dist %>']
+            },
+            html: ['<%%= config.dist %>/{,*/}*.html'],
+            css: ['<%%= config.dist %>/styles/{,*/}*.css']
         },
 
         imagemin: {
@@ -222,11 +237,13 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean:dist',
+        'useminPrepare',
         'concurrent:dist',
         <% if (includeModernizr) { %>'modernizr',<% } %>
         'less:dist',
         'copy:dist',
-        'rev'
+        'rev',
+        'usemin'
     ]);
 
     grunt.registerTask('serve', function (target) {
