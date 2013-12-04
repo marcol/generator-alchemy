@@ -19,6 +19,13 @@ module.exports = function (grunt) {
             bower: 'src/bower_components'
         },
 
+        'bower-install': {
+            app: {
+                html: '<%%= config.src %>/index.html',
+                ignorePath: '<%%= config.src %>/'
+            }
+        },
+
         watch: {
             less: {
                 files: ['<%%= config.src %>/styles/*.less'],
@@ -164,27 +171,27 @@ module.exports = function (grunt) {
         <% if (includeModernizr) { %>
         modernizr: {
             // Based on default settings on http://modernizr.com/download/
-            'devFile' : '<%%= config.bower %>/modernizr/modernizr.js',
-            'outputFile' : '<%%= config.dist %>/scripts/modernizr.js',
-            'extra' : {
-                'shiv' : true,
-                'printshiv' : false,
-                'load' : true,
-                'mq' : false,
-                'cssclasses' : true
+            'devFile': '<%%= config.bower %>/modernizr/modernizr.js',
+            'outputFile': '<%%= config.dist %>/scripts/modernizr.js',
+            'extra': {
+                'shiv': true,
+                'printshiv': false,
+                'load': true,
+                'mq': false,
+                'cssclasses': true
             },
-            'extensibility' : {
-                'addtest' : false,
-                'prefixed' : false,
-                'teststyles' : false,
-                'testprops' : false,
-                'testallprops' : false,
-                'hasevents' : false,
-                'prefixes' : false,
-                'domprefixes' : false
+            'extensibility': {
+                'addtest': false,
+                'prefixed': false,
+                'teststyles': false,
+                'testprops': false,
+                'testallprops': false,
+                'hasevents': false,
+                'prefixes': false,
+                'domprefixes': false
             },
-            'uglify' : true,
-            'parseFiles' : true
+            'uglify': true,
+            'parseFiles': true
         },
         <% } %>
 
@@ -208,8 +215,6 @@ module.exports = function (grunt) {
             }
         },
 
-
-
     });
 
     // Tasks.
@@ -218,7 +223,7 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'clean:dist',
         'concurrent:dist',
-        <% if (includeModernizr) { %>'modernizr', <% } %>
+        <% if (includeModernizr) { %>'modernizr',<% } %>
         'less:dist',
         'copy:dist',
         'rev'
@@ -232,7 +237,7 @@ module.exports = function (grunt) {
 
         grunt.task.run([
             'clean:server',
-            <% if (includeModernizr) { %>'modernizr', <% } %>
+            <% if (includeModernizr) { %>'modernizr',<% } %>
             'less:dev',
             'connect:livereload',
             'watch'

@@ -142,7 +142,6 @@
         this.mkdir('src/scripts');
         this.mkdir('src/styles');
         this.mkdir('src/bin');
-        this.mkdir('dist');
 
         // server folder structure
         this.mkdir('server');
@@ -150,7 +149,7 @@
         // setup files
         this.template('_package.json', 'package.json');
         this.template('_bower.json', 'bower.json');
-        this.template('GruntFile.js');
+        this.template('_GruntFile.js', 'GruntFile.js');
         this.template('_README.md', 'README.md');
 
         // content
