@@ -29,7 +29,7 @@ module.exports = function (grunt) {
         watch: {
             less: {
                 files: ['<%%= config.src %>/styles/*.less'],
-                tasks: ['less:dev', 'growl:less'],
+                tasks: ['less:dev'],
                 options: {
                     spawn: false,
                     interrupt: true
@@ -185,30 +185,44 @@ module.exports = function (grunt) {
 
         <% if (includeModernizr) { %>
         modernizr: {
-            // Based on default settings on http://modernizr.com/download/
-            'devFile': '<%%= config.bower %>/modernizr/modernizr.js',
-            'outputFile': '<%%= config.dist %>/scripts/modernizr.js',
-            'extra': {
-                'shiv': true,
-                'printshiv': false,
-                'load': true,
-                'mq': false,
-                'cssclasses': true
-            },
-            'extensibility': {
-                'addtest': false,
-                'prefixed': false,
-                'teststyles': false,
-                'testprops': false,
-                'testallprops': false,
-                'hasevents': false,
-                'prefixes': false,
-                'domprefixes': false
-            },
-            'uglify': true,
-            'parseFiles': true
+            'devFile' : '<%%= config.bower %>/modernizr/modernizr.js',
+            'outputFile' : '<%%= config.dist %>/bower_components/modernizr/modernizr.js',
+            files: [
+                '<%%= config.dist %>/scripts/{,*/}*.js',
+                '<%%= config.dist %>/styles/{,*/}*.css'
+            ],
+            uglify: true
         },
         <% } %>
+
+        requirejs: {
+            dev: {
+                options: {
+                    optimize: 'none',
+                    preserveLicenseComments: true,
+                    generateSourceMaps: true,
+                    removeCombined: true,
+                    useStrict: true,
+                    baseUrl: '<%%= config.src %>/scripts',
+                    mainConfigFile: '<%%= config.src %>/config-dev.js',
+                    dir: '.tmp/scripts',
+                    keepBuildDir: true
+                }
+            },
+            dist: {
+                options: {
+                    optimize: 'uglify',
+                    preserveLicenseComments: false,
+                    generateSourceMaps: false,
+                    removeCombined: true,
+                    useStrict: true,
+                    baseUrl: '<%%= config.src %>/scripts',
+                    mainConfigFile: '<%%= config.src %>/config-dist.js',
+                    dir: '<%%= config.dist %>/scripts',
+                    keepBuildDir: true
+                }
+            }
+        },
 
         less: {
             dev: {
@@ -241,6 +255,7 @@ module.exports = function (grunt) {
         'concurrent:dist',
         <% if (includeModernizr) { %>'modernizr',<% } %>
         'less:dist',
+        'requirejs:dist',
         'copy:dist',
         'rev',
         'usemin'
@@ -256,6 +271,7 @@ module.exports = function (grunt) {
             'clean:server',
             <% if (includeModernizr) { %>'modernizr',<% } %>
             'less:dev',
+            'requirejs:dev',
             'connect:livereload',
             'watch'
         ]);

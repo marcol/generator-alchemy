@@ -152,6 +152,10 @@
         this.template('_GruntFile.js', 'GruntFile.js');
         this.template('_README.md', 'README.md');
 
+        // requirejs
+        this.template('config-dev.js', 'src/config-dev.js');
+        this.template('config-dist.js', 'src/config-dist.js');
+
         // content
         this.template('_index.html', 'src/index.html');
         this.template('_404.html', 'src/404.html');
