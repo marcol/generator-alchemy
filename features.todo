@@ -70,4 +70,5 @@ Other tasks:
   ☐ Add tests to the generator
   ☐ Add support for Mocha
   Distribute LESS files according to SMACSS
+  Add polyfills to requirejs
 

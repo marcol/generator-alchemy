@@ -156,6 +156,8 @@
         this.mkdir(this.projSource + '/scripts');
         this.mkdir(this.projSource + '/styles');
         this.mkdir(this.projSource + '/bin');
+        this.mkdir(this.projSource + '/config');
+        this.mkdir(this.projDist);
 
         // setup files
         this.template('_package.json', 'package.json');

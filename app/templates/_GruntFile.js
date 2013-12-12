@@ -256,7 +256,7 @@ module.exports = function (grunt) {
         'concurrent:dist',
         'less:dist',
         'requirejs:dist',
-        // <% if (includeModernizr) { %>'modernizr',<% } %>
+        <% if (includeModernizr) { %>'modernizr',<% } %>
         'copy:dist',
         'rev',
         'usemin'
