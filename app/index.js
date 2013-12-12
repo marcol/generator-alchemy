@@ -88,6 +88,18 @@
             default: ''
         });
 
+        prompts.push({
+            name: 'projSource',
+            message: 'What\'s the source folder name?',
+            default: 'app'
+        });
+
+        prompts.push({
+            name: 'projDist',
+            message: 'What\'s the distribution folder name?',
+            default: 'dist'
+        });
+
         // options
         prompts.push({
             type: 'checkbox',
@@ -123,6 +135,8 @@
             this.projUrl = props.projUrl;
             this.projKeywords = props.projKeywords;
             this.projRepository = props.projRepository;
+            this.projSource = props.projSource;
+            this.projDist = props.projDist;
 
             // get features
             props.features.forEach(function (element) {
@@ -138,13 +152,10 @@
     AlchemyGenerator.prototype.app = function app() {
 
         // app folder strcture
-        this.mkdir('src');
-        this.mkdir('src/scripts');
-        this.mkdir('src/styles');
-        this.mkdir('src/bin');
-
-        // server folder structure
-        this.mkdir('server');
+        this.mkdir(this.projSource);
+        this.mkdir(this.projSource + '/scripts');
+        this.mkdir(this.projSource + '/styles');
+        this.mkdir(this.projSource + '/bin');
 
         // setup files
         this.template('_package.json', 'package.json');
@@ -153,46 +164,46 @@
         this.template('_README.md', 'README.md');
 
         // requirejs
-        this.template('config-dev.js', 'src/config-dev.js');
-        this.template('config-dist.js', 'src/config-dist.js');
+        this.template('config-dev.js', this.projSource + '/config-dev.js');
+        this.template('config-dist.js', this.projSource + '/config-dist.js');
 
         // content
-        this.template('_index.html', 'src/index.html');
-        this.template('_404.html', 'src/404.html');
-        this.template('_robots.txt', 'src/robots.txt');
-        this.template('_humans.txt', 'src/humans.txt');
-        this.copy('_crossdomain.xml', 'src/crossdomain.xml');
+        this.template('_index.html', this.projSource + '/index.html');
+        this.template('_404.html', this.projSource + '/404.html');
+        this.template('_robots.txt', this.projSource + '/robots.txt');
+        this.template('_humans.txt', this.projSource + '/humans.txt');
+        this.copy('_crossdomain.xml', this.projSource + '/crossdomain.xml');
     };
 
     AlchemyGenerator.prototype.scripts = function scripts() {
-        this.copy('scripts/_main.js', 'src/scripts/main.js');
+        this.copy('scripts/_main.js', this.projSource + '/scripts/main.js');
     };
 
     AlchemyGenerator.prototype.styles = function styles() {
 
         // base
-        this.copy('styles/_animations.less', 'src/styles/animations.less');
-        this.copy('styles/_icons.less', 'src/styles/icons.less');
-        this.copy('styles/_mixins.less', 'src/styles/mixins.less');
-        this.copy('styles/_vars.less', 'src/styles/vars.less');
+        this.copy('styles/_animations.less', this.projSource + '/styles/animations.less');
+        this.copy('styles/_icons.less', this.projSource + '/styles/icons.less');
+        this.copy('styles/_mixins.less', this.projSource + '/styles/mixins.less');
+        this.copy('styles/_vars.less', this.projSource + '/styles/vars.less');
 
         // styles
-        this.copy('styles/_layout.less', 'src/styles/layout.less');
-        this.copy('styles/_typography.less', 'src/styles/typography.less');
-        this.copy('styles/_styles.less', 'src/styles/styles.less');
+        this.copy('styles/_layout.less', this.projSource + '/styles/layout.less');
+        this.copy('styles/_typography.less', this.projSource + '/styles/typography.less');
+        this.copy('styles/_styles.less', this.projSource + '/styles/styles.less');
 
     };
 
     AlchemyGenerator.prototype.dotfiles = function dotfiles() {
         this.copy('editorconfig', '.editorconfig');
         this.copy('jshintrc', '.jshintrc');
-        this.copy('bowerrc', '.bowerrc');
+        this.template('bowerrc', '.bowerrc');
     };
 
     AlchemyGenerator.prototype.features = function scripts() {
 
         if (this.includeHandlebars) {
-            this.mkdir('src/templates');
+            this.mkdir(this.projSource + '/templates');
         }
 
     };

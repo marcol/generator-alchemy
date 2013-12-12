@@ -7,7 +7,7 @@
       "node_modules",
       "bower_components",
       "app/bower_components",
-      "src/bower_components",
+      "<%= projSource %>/bower_components",
       "test",
       "tests"
     ],

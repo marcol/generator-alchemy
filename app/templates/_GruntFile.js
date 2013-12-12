@@ -13,10 +13,10 @@ module.exports = function (grunt) {
     grunt.initConfig({
 
         config: {
-            src: 'src',
-            dist: 'dist',
+            src: '<%= projSource %>',
+            dist: '<%= projDist %>',
             images: 'bin',
-            bower: 'src/bower_components'
+            bower: '<%= projSource %>/bower_components'
         },
 
         'bower-install': {
