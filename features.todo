@@ -37,6 +37,13 @@ Grunt:
    ☐ JSHint
    ☐ Run Build workflow
 
+RequireJS:
+Add polyfills
+    Add optional items:
+    jQuery
+    Handlebars
+    Backbone
+
 NPM:
  ☐ Grunt dependencies (--save to add to the package.json)
    ☐ Clean
