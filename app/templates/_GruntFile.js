@@ -167,7 +167,7 @@ module.exports = function (grunt) {
                     cwd: '<%%= config.src %>',
                     dest: '<%%= config.dist %>',
                     src: [
-                        '*.{ico,png,txt}',
+                        '*.{ico,png,txt,xml}',
                         '<%%= config.images %>/{,*/}*.{webp,gif}',
                         'fonts/{,*/}*.*'
                     ]
@@ -185,12 +185,13 @@ module.exports = function (grunt) {
 
         <% if (includeModernizr) { %>
         modernizr: {
-            'devFile' : '<%%= config.bower %>/modernizr/modernizr.js',
-            'outputFile' : '<%%= config.dist %>/bower_components/modernizr/modernizr.js',
+            'devFile': '<%%= config.bower %>/modernizr/modernizr.js',
+            'outputFile': '<%%= config.dist %>/bower_components/modernizr/modernizr.js',
             files: [
                 '<%%= config.dist %>/scripts/{,*/}*.js',
                 '<%%= config.dist %>/styles/{,*/}*.css'
             ],
+            'parseFiles': true,
             uglify: true
         },
         <% } %>
@@ -253,9 +254,9 @@ module.exports = function (grunt) {
         'clean:dist',
         'useminPrepare',
         'concurrent:dist',
-        <% if (includeModernizr) { %>'modernizr',<% } %>
         'less:dist',
         'requirejs:dist',
+        // <% if (includeModernizr) { %>'modernizr',<% } %>
         'copy:dist',
         'rev',
         'usemin'
@@ -269,7 +270,6 @@ module.exports = function (grunt) {
 
         grunt.task.run([
             'clean:server',
-            <% if (includeModernizr) { %>'modernizr',<% } %>
             'less:dev',
             'requirejs:dev',
             'connect:livereload',
