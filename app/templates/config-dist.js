@@ -7,27 +7,18 @@ requirejs.config({
         // resources
         'requirelib': '../../<%= projSource %>/bower_components/requirejs/require'<% if (includejQuery) { %>,
         'jquery': '../../<%= projSource %>/bower_components/jquery/jquery'<% } %><% if (includeHandlebars) { %>,
-        'handlebars': '../../<%= projSource %>/bower_components/handlebars/handlebars.runtime'<% } %>
-        // 'backbone': '../../<%= projSource %>/bower_components/backbone/backbone',
-        // 'underscore': '../../<%= projSource %>/bower_components/underscore/underscore',
+        'handlebars': '../../<%= projSource %>/bower_components/handlebars/handlebars.runtime'<% } %>,
 
         // scripts
-        // 'start': 'start'
+        'main': 'main'
 
     },
 
     shim: {
 
         <% if (includeHandlebars) { %>'handlebars': {
-            exports: 'Handlebars'
-        },<% } %>
-        // 'underscore': {
-        //     exports: '_'
-        // },
-        // 'backbone': {
-        //     deps: ['jquery', 'underscore', 'handlebars'],
-        //     exports: 'Backbone'
-        // }
+           exports: 'Handlebars'
+       }<% } %>
         
     },
 
@@ -40,15 +31,12 @@ requirejs.config({
                 'requirelib'<% if (includejQuery) { %>,
                 'jquery'<% } %><% if (includeHandlebars) { %>,
                 'handlebars'<% } %>
-                // 'backbone'
             ]
+        },
+        {
+            name: 'main',
+            exclude: []
         }
-        // {
-        //     name: 'start',
-        //     exclude: [
-        //         'backbone'
-        //     ]
-        // }
     ]
 
 });

@@ -1,6 +1,6 @@
 Setup features:
- ☐ Config default items in package.json
- ☐ Config default items in bower.json
+ ✔ Config default items in package.json @done (13-12-15 12:53)
+ ✔ Config default items in bower.json @done (13-12-15 12:53)
  ✔ Set app structure @done (13-11-22 13:54)
  ✔ Add setup prompt @done (13-12-03 12:31)
 
@@ -36,12 +36,11 @@ Grunt:
    ✔ Run Build workflow @done (13-12-15 00:46)
 
 RequireJS optional items:
-  ☐ jQuery
-  ☐ Handlebars
-  ☐ Backbone
+  ✔ jQuery @done (13-12-15 02:36)
+  ✔ Handlebars @done (13-12-15 02:36)
 
 NPM:
- ☐ Grunt dependencies (--save to add to the package.json)
+ ✔ Grunt dependencies (--save to add to the package.json) @done (13-12-15 12:52)
    ✔ Clean @done (13-12-15 00:46)
    ✔ Connect @done (13-12-15 00:46)
    ✔ Watch @done (13-12-15 00:46)
@@ -55,18 +54,19 @@ NPM:
    ✔ SVGmin @done (13-12-15 00:46)
    ✔ HTMLmin @done (13-12-15 00:46)
    ✔ Copy @done (13-12-15 00:46)
-   ☐ HandleBars
+   ✔ HandleBars @done (13-12-15 12:52)
    ✔ Concurrent @done (13-12-15 00:46)
 
 Other tasks:
   ☐ Improve documentation
-  ☐ Create sub-generator with Backbone
-  ☐ Create sub-generator with Handlebars
-  ☐ Create sub-generator with jQuery
+  ✔ Create sub-generator with Handlebars @done (13-12-15 02:33)
+  ✔ Create sub-generator with jQuery @done (13-12-15 02:33)
   ☐ Add tests to the generator
   ☐ Add support for Mocha
+  ☐ Add generator to Yeoman repo
+  ☐ Create article about Yeoman
   ☐ Distribute LESS files according to SMACSS
-  ☐ Solve issue with modernizr folder permissions
+  ✔ Solve issue with modernizr folder permissions @done (13-12-15 02:33)
   ☐ Test:
     ☐ LESS
     ☐ Modernizr

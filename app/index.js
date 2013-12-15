@@ -118,10 +118,6 @@
                 name: 'Handlebars',
                 value: 'includeHandlebars',
                 checked: false
-            }, {
-                name: 'Backbone',
-                value: 'includeBackbone',
-                checked: false
             }]
         });
 
@@ -143,7 +139,6 @@
             this.includeModernizr = false;
             this.includejQuery = false;
             this.includeHandlebars = false;
-            this.includeBackbone = false;
             props.features.forEach(function (element) {
                 generator[element] = true;
             });
