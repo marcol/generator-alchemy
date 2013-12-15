@@ -1,17 +1,31 @@
 /**
- * @fileoverview Application styling, should only include imports
+ * GLOBAL LESS FILE
+ * 
+ * Application styling, should only include imports
+ * 
  */
 
 // Frameworks 
 @import "../bower_components/lesshat/build/lesshat";
 @import "../bower_components/normalize-less/normalize";
 
-// Base
+// Definition
 @import "vars";
 @import "mixins";
-@import "icons";
 @import "animations";
 
-// Styles
-@import "typography";
+// base
+@import "base";
+
+// layout
 @import "layout";
+
+// modules
+@import "modules";
+
+// state
+@import "state";
+
+// theme
+@import "theme";
+@import "icons";

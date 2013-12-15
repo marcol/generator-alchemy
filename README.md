@@ -1,27 +1,21 @@
 # generator-alchemy [![Build Status](https://secure.travis-ci.org/marcol/generator-alchemy.png?branch=master)](https://travis-ci.org/marcol/generator-alchemy)
 
-A generator for [Yeoman](http://yeoman.io).
+[![](http://yeoman.io/assets/img/yeoman-logo.png)](http://yeoman.io)
 
 
 ## Getting Started
 
-### What is Yeoman?
+### What is Alchemy?
 
-Trick question. It's not a thing. It's this guy:
+Alchemy is an [Yeoman](http://yeoman.io) generator for Web apps, with RequireJS and LESS. You may add Modernizr, jQuery and Handlebars as optional items. RequireJS, LESS and Handlebars are fully supported bu grunt tasks to enable a quick a smooth development workflow.
 
-![](http://i.imgur.com/JHaAlBJ.png)
+### Install
 
-Basically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.
-
-Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
+To install Alchemy generator you need NPM and Yeoman. To install Yeoman you just need to this:
 
 ```
 $ npm install -g yo
 ```
-
-### Yeoman Generators
-
-Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
 
 To install generator-alchemy from npm, run:
 
@@ -29,18 +23,43 @@ To install generator-alchemy from npm, run:
 $ npm install -g generator-alchemy
 ```
 
-Finally, initiate the generator:
+Now you just need to create the folder where you going to place your project and initiate the generator:
 
 ```
 $ yo alchemy
 ```
 
-### Getting To Know Yeoman
+Follow the instructions and choose the dependencies as you wish... and you are done!
 
-Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
 
-If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
+## Basic Features
 
+### RequireJS
+
+All the JavaScript is written as AMD modules and required as needed. In development mode, the files are loaded asynchronously for easy debug. When building the distribution package, two unglyfied files are created: one with all the external resources modules (libraries, plugins...) and the second with all the implemented modules for your web app.
+
+### LESS
+
+The LESS files are distributed according to the [SMACSS](http://smacss.com/book/) guide.
+
+Along the LESS files structure, there is the [normalize.less](https://github.com/additiveinverse/normalize.less) file that makes the browsers default properties normalized and predictable.
+
+When editing (grunt serve) the LESS files are compiled into a CSS files with an updated source map.
+
+The build process (grunt, grunt build or grunt serve:build) takes the LESS files and generates a single compressed CSS file.
+
+## Optional Features
+
+### Modernizr
+
+### jQuery
+
+### Handlebars
+
+
+## Grunt Tasks
+
+## Other files
 
 ## License
 

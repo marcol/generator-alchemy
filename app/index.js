@@ -181,15 +181,28 @@
 
     AlchemyGenerator.prototype.styles = function styles() {
 
-        // base
-        this.copy('styles/_animations.less', this.projSource + '/styles/animations.less');
-        this.copy('styles/_icons.less', this.projSource + '/styles/icons.less');
-        this.copy('styles/_mixins.less', this.projSource + '/styles/mixins.less');
+        // definitions
         this.copy('styles/_vars.less', this.projSource + '/styles/vars.less');
+        this.copy('styles/_mixins.less', this.projSource + '/styles/mixins.less');
+        this.copy('styles/_animations.less', this.projSource + '/styles/animations.less');
+        
+        // base
+        this.copy('styles/_base.less', this.projSource + '/styles/base.less');
 
-        // styles
+        // layout
         this.copy('styles/_layout.less', this.projSource + '/styles/layout.less');
-        this.copy('styles/_typography.less', this.projSource + '/styles/typography.less');
+
+        // modules
+        this.copy('styles/_modules.less', this.projSource + '/styles/modules.less');
+        
+        // state
+        this.copy('styles/_state.less', this.projSource + '/styles/state.less');
+
+        // theme
+        this.copy('styles/_theme.less', this.projSource + '/styles/theme.less');
+        this.copy('styles/_icons.less', this.projSource + '/styles/icons.less');
+        
+        // importer
         this.copy('styles/_styles.less', this.projSource + '/styles/styles.less');
 
     };

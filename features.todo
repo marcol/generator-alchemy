@@ -58,16 +58,16 @@ NPM:
    ✔ Concurrent @done (13-12-15 00:46)
 
 Other tasks:
-  ☐ Improve documentation
   ✔ Create sub-generator with Handlebars @done (13-12-15 02:33)
   ✔ Create sub-generator with jQuery @done (13-12-15 02:33)
-  ☐ Add tests to the generator
-  ☐ Add support for Mocha
-  ☐ Add generator to Yeoman repo
-  ☐ Create article about Yeoman
-  ☐ Distribute LESS files according to SMACSS
+  ✔ Add generator to Yeoman repo @done (13-12-15 21:14)
   ✔ Solve issue with modernizr folder permissions @done (13-12-15 02:33)
-  ☐ Test:
+  ☐ Improve documentation
+  ☐ Add tests to the generator
+  ☐ Create article about Yeoman
+  ☐ Distribute LESS files according to SMACSS (http://smacss.com/book/)
+  ☐ Add http://fontawesome.io/get-started/
+  ☐ Development testing:
     ☐ LESS
     ☐ Modernizr
     ☐ Handlebars
