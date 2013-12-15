@@ -15,8 +15,7 @@ module.exports = function (grunt) {
         config: {
             src: '<%= projSource %>',
             dist: '<%= projDist %>',
-            images: 'bin',
-            bower: '<%= projSource %>/bower_components'
+            images: 'bin'
         },
 
         'bower-install': {
@@ -45,7 +44,16 @@ module.exports = function (grunt) {
                     '{.tmp,<%%= config.src %>}/scripts/{,*/}*.js',
                     '<%%= config.src %>/<%%= config.images %>/{,*/}*.{gif,jpeg,jpg,png,svg,webp}'
                 ]
-            }
+            }<% if (includeHandlebars) { %>,
+
+            handlebars: {
+                files: ['<%%= config.src %>/templates/*.hbs'],
+                tasks: ['handlebars'],
+                options: {
+                    spawn: false,
+                    interrupt: true
+                },
+            }<% } %>
         },
 
         connect: {
@@ -176,16 +184,21 @@ module.exports = function (grunt) {
         },
 
         concurrent: {
+            dev: [
+                'less:dev'<% if (includeHandlebars) { %>,
+                'handlebars'<% } %>
+            ],
             dist: [
+                'less:dist',
                 'imagemin',
                 'svgmin',
-                'htmlmin'
+                'htmlmin'<% if (includeHandlebars) { %>,
+                'handlebars'<% } %>
             ]
-        },
+        },<% if (includeModernizr) { %>
 
-        <% if (includeModernizr) { %>
         modernizr: {
-            'devFile': '<%%= config.bower %>/modernizr/modernizr.js',
+            'devFile': '<%%= config.src %>/bower_components/modernizr/modernizr.js',
             'outputFile': '<%%= config.dist %>/bower_components/modernizr/modernizr.js',
             files: [
                 '<%%= config.dist %>/scripts/{,*/}*.js',
@@ -193,8 +206,7 @@ module.exports = function (grunt) {
             ],
             'parseFiles': true,
             uglify: true
-        },
-        <% } %>
+        },<% } %>
 
         requirejs: {
             dev: {
@@ -243,7 +255,21 @@ module.exports = function (grunt) {
                     '<%%= config.dist %>/styles/styles.css': '<%%= config.src %>/styles/styles.less'
                 }
             }
-        },
+        }<% if (includeHandlebars) { %>,
+
+        handlebars: {
+            compile: {
+                options: {
+                    namespace: false,
+                    amd: true
+                },
+                expand: true,
+                cwd: '<%%= config.src %>/templates',
+                src: '**/*.hbs',
+                dest: '<%%= config.src %>/scripts/templates',
+                ext: '.js'
+            }
+        }<% } %>
 
     });
 
@@ -254,9 +280,8 @@ module.exports = function (grunt) {
         'clean:dist',
         'useminPrepare',
         'concurrent:dist',
-        'less:dist',
-        'requirejs:dist',
-        <% if (includeModernizr) { %>'modernizr',<% } %>
+        'requirejs:dist',<% if (includeModernizr) { %>
+        'modernizr',<% } %>
         'copy:dist',
         'rev',
         'usemin'
@@ -270,7 +295,7 @@ module.exports = function (grunt) {
 
         grunt.task.run([
             'clean:server',
-            'less:dev',
+            'concurrent:dev',
             'requirejs:dev',
             'connect:livereload',
             'watch'

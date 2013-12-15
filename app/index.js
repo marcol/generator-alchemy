@@ -26,7 +26,8 @@
 
         this.on('end', function () {
             this.installDependencies({
-                skipInstall: options['skip-install']
+                skipInstall: options['skip-install'],
+                skipMessage: options['skip-install-message']
             });
         });
 
@@ -139,6 +140,10 @@
             this.projDist = props.projDist;
 
             // get features
+            this.includeModernizr = false;
+            this.includejQuery = false;
+            this.includeHandlebars = false;
+            this.includeBackbone = false;
             props.features.forEach(function (element) {
                 generator[element] = true;
             });
@@ -156,8 +161,6 @@
         this.mkdir(this.projSource + '/scripts');
         this.mkdir(this.projSource + '/styles');
         this.mkdir(this.projSource + '/bin');
-        this.mkdir(this.projSource + '/config');
-        this.mkdir(this.projDist);
 
         // setup files
         this.template('_package.json', 'package.json');

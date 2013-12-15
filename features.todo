@@ -5,62 +5,58 @@ Setup features:
  ✔ Add setup prompt @done (13-12-03 12:31)
 
 Bower:
- ✔ Add polyfills @done (13-11-22 13:48)
  ✔ Add modernizr @done (13-11-22 11:59)
  ✔ Add normalize-less @done (13-11-22 11:59)
  ✔ RequireJS @done (13-11-22 11:59)
  ✔ Lesshat @done (13-11-22 11:59)
 
 Grunt:
- ☐ Build workflow:
-   ☐ Clean:dist
-   ☐ Concurrent
-     ☐ Image min
-     ☐ SVG min
-     ☐ HTML min
-   ☐ Modernizr (optional)
-   ☐ LESS:dist
-   ☐ RequireJS:dist
-   ☐ Copy
-   ☐ Revision
- ☐ Serve workflow
-   ☐ Dev
-     ☐ Clean:serve
-     ☐ Modernizr (optional)
-     ☐ LESS:dev
-     ☐ RequireJS:dev
-     ☐ Connect:livereload
-   ☐ Build
-     ☐ Run Build workflow
-     ☐ Connect
- ☐ Default workflow
-   ☐ JSHint
-   ☐ Run Build workflow
+ ✔ Build workflow: @done (13-12-15 01:18)
+   ✔ Clean:dist @done (13-12-15 00:45)
+   ✔ Concurrent @done (13-12-15 00:45)
+     ✔ Image min @done (13-12-15 00:45)
+     ✔ SVG min @done (13-12-15 00:45)
+     ✔ HTML min @done (13-12-15 00:45)
+   ✔ Modernizr (optional) @done (13-12-15 01:18)
+   ✔ LESS:dist @done (13-12-15 00:45)
+   ✔ RequireJS:dist @done (13-12-15 00:45)
+   ✔ Copy @done (13-12-15 00:45)
+   ✔ Revision @done (13-12-15 00:45)
+ ✔ Serve workflow @done (13-12-15 00:46)
+   ✔ Dev @done (13-12-15 00:46)
+     ✔ Clean:serve @done (13-12-15 00:46)
+     ✔ LESS:dev @done (13-12-15 00:46)
+     ✔ RequireJS:dev @done (13-12-15 00:46)
+     ✔ Connect:livereload @done (13-12-15 00:46)
+   ✔ Build @done (13-12-15 00:46)
+     ✔ Run Build workflow @done (13-12-15 00:46)
+     ✔ Connect @done (13-12-15 00:46)
+ ✔ Default workflow @done (13-12-15 00:46)
+   ✔ JSHint @done (13-12-15 00:46)
+   ✔ Run Build workflow @done (13-12-15 00:46)
 
-RequireJS:
-Add polyfills
-    Add optional items:
-    jQuery
-    Handlebars
-    Backbone
+RequireJS optional items:
+  ☐ jQuery
+  ☐ Handlebars
+  ☐ Backbone
 
 NPM:
  ☐ Grunt dependencies (--save to add to the package.json)
-   ☐ Clean
-   ☐ Connect
-   ☐ Watch
-   ☐ Modernizr
-   ☐ LESS
-   ☐ RequireJS
-   ☐ jsHint
-   ☐ Rev
-   ☐ LiveReload
-   ☐ Imagemin
-   ☐ SVGmin
-   ☐ HTMLmin
-   ☐ Copy
+   ✔ Clean @done (13-12-15 00:46)
+   ✔ Connect @done (13-12-15 00:46)
+   ✔ Watch @done (13-12-15 00:46)
+   ✔ Modernizr @done (13-12-15 00:47)
+   ✔ LESS @done (13-12-15 00:46)
+   ✔ RequireJS @done (13-12-15 00:46)
+   ✔ jsHint @done (13-12-15 00:46)
+   ✔ Rev @done (13-12-15 00:46)
+   ✔ LiveReload @done (13-12-15 00:46)
+   ✔ Imagemin @done (13-12-15 00:46)
+   ✔ SVGmin @done (13-12-15 00:46)
+   ✔ HTMLmin @done (13-12-15 00:46)
+   ✔ Copy @done (13-12-15 00:46)
    ☐ HandleBars
-   ☐ Concurrent
+   ✔ Concurrent @done (13-12-15 00:46)
 
 Other tasks:
   ☐ Improve documentation
@@ -69,6 +65,12 @@ Other tasks:
   ☐ Create sub-generator with jQuery
   ☐ Add tests to the generator
   ☐ Add support for Mocha
-  Distribute LESS files according to SMACSS
-  Add polyfills to requirejs
+  ☐ Distribute LESS files according to SMACSS
+  ☐ Solve issue with modernizr folder permissions
+  ☐ Test:
+    ☐ LESS
+    ☐ Modernizr
+    ☐ Handlebars
+    ☐ jQuery
+    ☐ Images
 

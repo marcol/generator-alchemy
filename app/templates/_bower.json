@@ -12,10 +12,11 @@
       "tests"
     ],
     "dependencies": {
-        "modernizr": "~2.7.0",
         "normalize-less": "*",
         "requirejs": "~2.1.9",
-        "lesshat": "~2.0.8",
-        "html5-polyfills": "*"
+        "lesshat": "~2.0.8"<% if (includeModernizr) { %>,
+        "modernizr": "~2.7.0"<% } %><% if (includejQuery) { %>,
+        "jquery": "~2.0.3"<% } %><% if (includeHandlebars) { %>,
+        "handlebars": "~1.1.2"<% } %>
     }
 }

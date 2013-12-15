@@ -13,8 +13,8 @@
 
         "grunt-contrib-less": "~0.7.0",
         "grunt-contrib-requirejs": "~0.4.1",<% if (includeModernizr) { %>
-        "grunt-modernizr": "~0.3.0",<% } %>
-            
+        "grunt-modernizr": "~0.3.0",<% } %><% if (includeHandlebars) { %>
+        "grunt-contrib-handlebars": "~0.6.0",<% } %>
         "grunt-bower-install": "~0.5.0",
         "grunt-concurrent": "~0.3.0",
         "grunt-contrib-clean": "~0.5.0",
