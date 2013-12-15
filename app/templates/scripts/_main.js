@@ -1,5 +1,4 @@
-/*global*/
-/*jshint*/
+/*jshint browser: true*/
 
 (function (window, undefined) {
 
