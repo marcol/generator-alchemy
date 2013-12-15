@@ -62,10 +62,10 @@ Other tasks:
   ✔ Create sub-generator with jQuery @done (13-12-15 02:33)
   ✔ Add generator to Yeoman repo @done (13-12-15 21:14)
   ✔ Solve issue with modernizr folder permissions @done (13-12-15 02:33)
-  ☐ Improve documentation
+  ✔ Distribute LESS files according to SMACSS (http://smacss.com/book/) @done (13-12-15 23:36)
+  ✔ Improve documentation @done (13-12-16 00:20)
   ☐ Add tests to the generator
   ☐ Create article about Yeoman
-  ☐ Distribute LESS files according to SMACSS (http://smacss.com/book/)
   ☐ Add http://fontawesome.io/get-started/
   ☐ Development testing:
     ☐ LESS

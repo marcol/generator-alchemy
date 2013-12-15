@@ -7,7 +7,7 @@
 
 ### What is Alchemy?
 
-Alchemy is an [Yeoman](http://yeoman.io) generator for Web apps, with RequireJS and LESS. You may add Modernizr, jQuery and Handlebars as optional items. RequireJS, LESS and Handlebars are fully supported by grunt tasks to enable a quick a smooth development workflow.
+Alchemy is an [Yeoman](http://yeoman.io) generator for Web apps, with RequireJS and LESS. You may add Modernizr, jQuery and Handlebars as optional items. RequireJS, LESS and Handlebars are fully supported by grunt tasks to enable a quick and smooth development workflow.
 
 ### Install
 
@@ -38,6 +38,8 @@ Follow the instructions and choose the dependencies as you wish... and you are d
 
 All the JavaScript is written as AMD modules and required as needed. In development mode, the files are loaded asynchronously for easy debug. When building the distribution package, two uglified files are created: one with all the external resources modules (libraries, plugins...) and the second with all the implemented modules for your web app.
 
+The behavior of RequireJS is defined by the files config-dev.js and config-dist. Visit this [RequireJS example build](https://github.com/jrburke/r.js/blob/master/build/example.build.js) to get more information.
+
 ### LESS
 
 The LESS files are distributed according to the [SMACSS](http://smacss.com/book/) guide.
@@ -48,19 +50,57 @@ When editing (grunt serve) the LESS files are compiled into a CSS files with an 
 
 The build process (grunt, grunt build or grunt serve:build) takes the LESS files and generates a single compressed CSS file.
 
+### Grunt Tasks
+
+#### grunt build
+
+ * Clean the build folder (dist)
+ * Concatenates and uglifies the compiled LESS files
+ * Compresses images
+ * Compresses SVG files
+ * Minifies HTML files
+ * OPTIONAL: Concatenates and uglifies the compiled Handlebars templates
+ * Concatenates and uglifies the JavaScript resources into 2 files (resources and main)
+ * OPTIONAL: Generates the Modernizr dist file by parsing CSS and JavaScript files and defining all the required dependencies
+ * Copies files from the development folder (app)
+ * Adds revisions to static files
+
+#### grunt
+
+ * Runs JSHint against the JavaScript implemented code
+ * Runs the build process
+
+#### grunt serve
+
+ * Clean server folder (.tmp)
+ * Compile LESS files
+ * OPTIONAL: Compile Handlebars templates
+ * Checks RequireJS configuration
+ * Start the connect server with livereload
+ * Start watching files:
+  * OPTIONAL: Compiles Handlebars templates on edit
+  * Compiles LESS on edit
+  * Reloads the webpage on any resource change
+
+#### grunt serve:build
+
+ * Runs the build process
+ * Starts the node server (connect)
+
+
 ## Optional Features
 
 ### Modernizr
 
+A full feature version of Modernizr is enabled for the development environment. When building the distribution package, a grunt task will check all JavaScript and CSS files to check which Modernizr dependencies are required and add them to the final uglified build file.
+
 ### jQuery
+Includes jQuery as one of the resources dependency in RequireJS.
 
 ### Handlebars
 
-## File Structure
-
-## Grunt Tasks
-
-## Other Files
+The Handlebars templates should be added in the templates dev folder. In development mode each file change will force the compiler to recompile the templates into JavaScript that can be handled in the cliend side.
+When building the distribution file all the templates will be compiled into an uglified JavaScript file.
 
 ## License
 
