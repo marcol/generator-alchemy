@@ -44,7 +44,7 @@
         // have Yeoman greet the user.
         if (!this.options['skip-welcome-message']) {
             console.log(this.yeoman);
-            console.log('Alchemy Generator!'); // FIXME
+            console.log(this.pkg.description + '\n');
         }
 
         prompts.push({
