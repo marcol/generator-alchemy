@@ -7,7 +7,7 @@
 
 ### What is Alchemy?
 
-Alchemy is an [Yeoman](http://yeoman.io) generator for Web apps, with RequireJS and LESS. You may add Modernizr, jQuery and Handlebars as optional items. RequireJS, LESS and Handlebars are fully supported bu grunt tasks to enable a quick a smooth development workflow.
+Alchemy is an [Yeoman](http://yeoman.io) generator for Web apps, with RequireJS and LESS. You may add Modernizr, jQuery and Handlebars as optional items. RequireJS, LESS and Handlebars are fully supported by grunt tasks to enable a quick a smooth development workflow.
 
 ### Install
 
@@ -36,13 +36,13 @@ Follow the instructions and choose the dependencies as you wish... and you are d
 
 ### RequireJS
 
-All the JavaScript is written as AMD modules and required as needed. In development mode, the files are loaded asynchronously for easy debug. When building the distribution package, two unglyfied files are created: one with all the external resources modules (libraries, plugins...) and the second with all the implemented modules for your web app.
+All the JavaScript is written as AMD modules and required as needed. In development mode, the files are loaded asynchronously for easy debug. When building the distribution package, two uglified files are created: one with all the external resources modules (libraries, plugins...) and the second with all the implemented modules for your web app.
 
 ### LESS
 
 The LESS files are distributed according to the [SMACSS](http://smacss.com/book/) guide.
 
-Along the LESS files structure, there is the [normalize.less](https://github.com/additiveinverse/normalize.less) file that makes the browsers default properties normalized and predictable.
+Along the LESS files structure, there is the [normalize.less](https://github.com/additiveinverse/normalize.less) file that makes the browsers default properties normalised and predictable.
 
 When editing (grunt serve) the LESS files are compiled into a CSS files with an updated source map.
 
@@ -56,10 +56,11 @@ The build process (grunt, grunt build or grunt serve:build) takes the LESS files
 
 ### Handlebars
 
+## File Structure
 
 ## Grunt Tasks
 
-## Other files
+## Other Files
 
 ## License
 
