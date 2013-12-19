@@ -66,8 +66,8 @@ module.exports = function (grunt) {
                 options: {
                     open: true,
                     base: [
-                        '.tmp',
-                        '<%%= config.src %>'
+                        '<%%= config.src %>',
+                        '.tmp'
                     ]
                 }
             },
