@@ -167,7 +167,18 @@ module.exports = function (grunt) {
             }
         },
 
-        copy: {
+        copy: {<% if (includeFontAwesome) { %>
+            fa: {
+                files: [{
+                    expand: true,
+                    dot: true,
+                    cwd: '<%%= config.src %>/bower_components/Font-Awesome/fonts',
+                    dest: '<%%= config.src %>/fonts',
+                    src: [
+                        '{,*/}*.*'
+                    ]
+                }]
+            },<% } %>
             dist: {
                 files: [{
                     expand: true,
@@ -276,7 +287,8 @@ module.exports = function (grunt) {
     // Tasks.
     grunt.registerTask('default', ['jshint', 'build']);
 
-    grunt.registerTask('build', [
+    grunt.registerTask('build', [<% if (includeFontAwesome) { %>
+        'copy:fa',<% } %>
         'clean:dist',
         'useminPrepare',
         'concurrent:dist',
@@ -293,7 +305,8 @@ module.exports = function (grunt) {
             return grunt.task.run(['build', 'connect:dist:keepalive']);
         }
 
-        grunt.task.run([
+        grunt.task.run([<% if (includeFontAwesome) { %>
+            'copy:fa',<% } %>
             'clean:server',
             'concurrent:dev',
             'requirejs:dev',
