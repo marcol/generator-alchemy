@@ -118,6 +118,10 @@
                 name: 'Handlebars',
                 value: 'includeHandlebars',
                 checked: false
+            }, {
+                name: 'Font-Awesome',
+                value: 'includeFontAwesome',
+                checked: false
             }]
         });
 
@@ -139,6 +143,7 @@
             this.includeModernizr = false;
             this.includejQuery = false;
             this.includeHandlebars = false;
+            this.includeFontAwesome = false;
             props.features.forEach(function (element) {
                 generator[element] = true;
             });

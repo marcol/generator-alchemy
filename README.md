@@ -7,7 +7,7 @@
 
 ### What is Alchemy?
 
-Alchemy is an [Yeoman](http://yeoman.io) generator for Web apps, with RequireJS and LESS. You may add Modernizr, jQuery and Handlebars as optional items. RequireJS, LESS and Handlebars are fully supported by grunt tasks to enable a quick and smooth development workflow.
+Alchemy is an [Yeoman](http://yeoman.io) generator for Web apps, with RequireJS and LESS. You may add Modernizr, jQuery, Handlebars or Font-Awesome as optional items. RequireJS, LESS and Handlebars are fully supported by grunt tasks to enable a quick and smooth development workflow.
 
 ### Install
 
@@ -49,6 +49,10 @@ Along the LESS files structure, there is the [normalize.less](https://github.com
 When editing (grunt serve) the LESS files are compiled into a CSS files with an updated source map.
 
 The build process (grunt, grunt build or grunt serve:build) takes the LESS files and generates a single compressed CSS file.
+
+### Font-Awesome
+
+[Font-Awesome](https://github.com/FortAwesome/Font-Awesome) is supported via LESS.
 
 ### Grunt Tasks
 

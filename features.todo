@@ -66,11 +66,11 @@ Other tasks:
   ✔ Improve documentation @done (13-12-16 00:20)
   ☐ Add tests to the generator
   ☐ Create article about Yeoman
-  ☐ Add http://fontawesome.io/get-started/
-  ☐ Development testing:
-    ☐ LESS
-    ☐ Modernizr
-    ☐ Handlebars
-    ☐ jQuery
-    ☐ Images
+  ✔ Add http://fontawesome.io/get-started/ @done (14-01-15 23:36)
+  ✔ Development testing: @done (14-01-15 23:02)
+    ✔ LESS @done (14-01-15 23:02)
+    ✔ Modernizr @done (14-01-15 23:02)
+    ✔ Handlebars @done (14-01-15 23:02)
+    ✔ jQuery @done (14-01-15 23:02)
+    ✔ Images @done (14-01-15 23:02)
 

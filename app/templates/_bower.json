@@ -17,6 +17,7 @@
         "lesshat": "~2.0.8"<% if (includeModernizr) { %>,
         "modernizr": "~2.7.0"<% } %><% if (includejQuery) { %>,
         "jquery": "~2.0.3"<% } %><% if (includeHandlebars) { %>,
-        "handlebars": "~1.1.2"<% } %>
+        "handlebars": "~1.1.2"<% } %><% if (includeFontAwesome) { %>,
+        "Font-Awesome": "~4.0.3"<% } %>
     }
 }
