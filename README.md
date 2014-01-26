@@ -1,6 +1,6 @@
 # generator-alchemy [![Build Status](https://secure.travis-ci.org/marcol/generator-alchemy.png?branch=master)](https://travis-ci.org/marcol/generator-alchemy)
 
-[![](https://raw.github.com/yeoman/yeoman.io/gh-pages/assets/img/yeoman-horizontal.gif)](http://yeoman.io)
+[![](http://yeoman.io/assets/img/yeoman-logo.a053.png)](http://yeoman.io)
 
 
 ## Getting Started
