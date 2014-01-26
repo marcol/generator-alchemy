@@ -50,10 +50,6 @@ When editing (grunt serve) the LESS files are compiled into a CSS files with an 
 
 The build process (grunt, grunt build or grunt serve:build) takes the LESS files and generates a single compressed CSS file.
 
-### Font-Awesome
-
-[Font-Awesome](https://github.com/FortAwesome/Font-Awesome) is supported via LESS.
-
 ### Grunt Tasks
 
 #### grunt build
@@ -105,6 +101,10 @@ Includes jQuery as one of the resources dependency in RequireJS.
 
 The Handlebars templates should be added in the templates dev folder. In development mode each file change will force the compiler to recompile the templates into JavaScript that can be handled in the cliend side.
 When building the distribution file all the templates will be compiled into an uglified JavaScript file.
+
+### Font-Awesome
+
+[Font-Awesome](https://github.com/FortAwesome/Font-Awesome) is supported via LESS.
 
 ## License
 
