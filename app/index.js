@@ -62,7 +62,7 @@
         prompts.push({
             name: 'projAuthor',
             message: 'Who\'s the author?',
-            default: ''
+            default: this.user.git.username || ''
         });
 
         prompts.push({
