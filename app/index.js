@@ -214,6 +214,7 @@
 
     AlchemyGenerator.prototype.dotfiles = function dotfiles() {
         this.copy('editorconfig', '.editorconfig');
+        this.copy('gitignore', '.gitignore');
         this.copy('jshintrc', '.jshintrc');
         this.template('bowerrc', '.bowerrc');
     };
