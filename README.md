@@ -1,8 +1,5 @@
 # generator-alchemy [![Build Status](https://secure.travis-ci.org/marcol/generator-alchemy.png?branch=master)](https://travis-ci.org/marcol/generator-alchemy)
 
-[![](https://github-camo.global.ssl.fastly.net/44bd1fb2ff06f905bfa0c44e9ad5f1729b1880c8/687474703a2f2f79656f6d616e2e696f2f6173736574732f696d672f79656f6d616e2d6d617374686561642e706e67)](http://yeoman.io)
-
-
 ## Getting Started
 
 ### What is Alchemy?
