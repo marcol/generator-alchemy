@@ -1,4 +1,4 @@
-# generator-alchemy [![Build Status](https://secure.travis-ci.org/marcol/generator-alchemy.png?branch=master)](https://travis-ci.org/marcol/generator-alchemy)
+# generator-alchemy [![Build Status](https://secure.travis-ci.org/marcol/generator-alchemy.svg?branch=master)](https://travis-ci.org/marcol/generator-alchemy)
 
 ## Getting Started
 
