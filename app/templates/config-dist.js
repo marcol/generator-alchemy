@@ -15,11 +15,9 @@ requirejs.config({
     },
 
     shim: {
-
         <% if (includeHandlebars) { %>'handlebars': {
            exports: 'Handlebars'
        }<% } %>
-        
     },
 
     modules: [

@@ -15,7 +15,7 @@
     "newcap": true,
     "noarg": true,
     "noempty": true,
-    "nonew": false,
+    "nonew": true,
     "plusplus": false,
     "quotmark": true,
     "regexp": true,
@@ -25,8 +25,8 @@
     "trailing": true,
     "maxparams": 4,
     "maxdepth": 5,
-    // "maxstatements": 5,
-    "maxlen": 240,
+    "maxstatements": 12,
+    "maxlen": 120,
            
     // Relaxing Options
     "asi": false,
