@@ -2,23 +2,23 @@
 
     // jshint options http://www.jshint.com/docs/options/
     
-    "indent": 4,
-
     // Enforcing Options
     "bitwise": true,
     "camelcase": true,
     "curly": true,
     "eqeqeq": true,
     "forin": true,
+    "freeze": true,
     "immed": true,
+    "indent": 4,
     "latedef": true,
     "newcap": true,
     "noarg": true,
     "noempty": true,
+    "nonbsp": true,
     "nonew": true,
     "plusplus": false,
     "quotmark": true,
-    "regexp": true,
     "undef": true,
     "unused": true,
     "strict": true,
@@ -26,6 +26,11 @@
     "maxparams": 4,
     "maxdepth": 5,
     "maxstatements": 12,
+    "maxlen": 120,
+
+    "maxdepth": 4,
+    "maxstatements": 10,
+    "maxcomplexity": 6,
     "maxlen": 120,
            
     // Relaxing Options
@@ -37,24 +42,25 @@
     "evil": false,
     "expr": false,
     "funcscope": false,
+    "gcl": false,
     "globalstrict": false,
     "iterator": false,
     "lastsemic": false,
     "laxbreak": false,
     "laxcomma": false,
     "loopfunc": false,
+    "maxerr": false,
     "moz": false,
     "multistr": false,
-    "onecase": false,
+    "notypeof": false,
     "proto": false,
     "scripturl": false,
-    "regexdash": false,
-    "scripturl": false,
-    "smarttabs": true,
+    "smarttabs": false,
     "shadow": false,
     "sub": false,
     "supernew": false,
     "validthis": false,
+    "noyield": false,
 
     // Environments
     "browser": false,

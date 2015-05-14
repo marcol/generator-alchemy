@@ -1,6 +1,6 @@
 {
     "name": "generator-alchemy",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "description": "Alchemy is an Yeoman generator for Web apps, with RequireJS and LESS. You may add Modernizr, jQuery and Handlebars as optional items. RequireJS, LESS and Handlebars are fully supported bu grunt tasks to enable a quick a smooth development workflow.",
     "keywords": [
         "yeoman-generator",
@@ -26,7 +26,7 @@
     },
     "scripts": {},
     "dependencies": {
-        "yeoman-generator": "~0.13.0"
+        "yeoman-generator": "~0.18.0"
     },
     "devDependencies": {},
     "peerDependencies": {

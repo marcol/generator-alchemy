@@ -20,7 +20,7 @@
         return slugged;
     }
 
-    AlchemyGenerator = function AlchemyGenerator(args, options, config) {
+    AlchemyGenerator = function AlchemyGenerator(args, options) {
 
         yeoman.generators.Base.apply(this, arguments);
 
@@ -50,55 +50,55 @@
         prompts.push({
             name: 'projName',
             message: 'What\'s your project name?',
-            default: extractGeneratorName(this._, this.appname)
+            'default': extractGeneratorName(this._, this.appname)
         });
 
         prompts.push({
             name: 'projVersion',
             message: 'What\'s your project version?',
-            default: '0.0.0'
+            'default': '0.0.0'
         });
 
         prompts.push({
             name: 'projAuthor',
             message: 'Who\'s the author?',
-            default: this.user.git.username || ''
+            'default': this.user.git.username || ''
         });
 
         prompts.push({
             name: 'projDescription',
             message: 'Can you add a discription of the project?',
-            default: ''
+            'default': ''
         });
 
         prompts.push({
             name: 'projKeywords',
             message: 'Can you add some keywords for the project?',
-            default: ''
+            'default': ''
         });
 
         prompts.push({
             name: 'projRepository',
             message: 'What\'s the git repository url?',
-            default: ''
+            'default': ''
         });
 
         prompts.push({
             name: 'projUrl',
             message: 'Can you add the project\'s url?',
-            default: ''
+            'default': ''
         });
 
         prompts.push({
             name: 'projSource',
             message: 'What\'s the source folder name?',
-            default: 'app'
+            'default': 'app'
         });
 
         prompts.push({
             name: 'projDist',
             message: 'What\'s the distribution folder name?',
-            default: 'dist'
+            'default': 'dist'
         });
 
         // options

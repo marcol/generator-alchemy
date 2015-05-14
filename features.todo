@@ -1,76 +1,17 @@
-Setup features:
- ✔ Config default items in package.json @done (13-12-15 12:53)
- ✔ Config default items in bower.json @done (13-12-15 12:53)
- ✔ Set app structure @done (13-11-22 13:54)
- ✔ Add setup prompt @done (13-12-03 12:31)
+Express
+ ☐ Add express
+ ☐ Add to initial setup
+ ☐ Add basic app.js
+ ☐ Change grunt build
+ ☐ Change grunt serve
+ ☐ Fix livereload
+ ☐ Remove unecessary files
+ ☐ Check txt fules
 
-Bower:
- ✔ Add modernizr @done (13-11-22 11:59)
- ✔ Add normalize-less @done (13-11-22 11:59)
- ✔ RequireJS @done (13-11-22 11:59)
- ✔ Lesshat @done (13-11-22 11:59)
-
-Grunt:
- ✔ Build workflow: @done (13-12-15 01:18)
-   ✔ Clean:dist @done (13-12-15 00:45)
-   ✔ Concurrent @done (13-12-15 00:45)
-     ✔ Image min @done (13-12-15 00:45)
-     ✔ SVG min @done (13-12-15 00:45)
-     ✔ HTML min @done (13-12-15 00:45)
-   ✔ Modernizr (optional) @done (13-12-15 01:18)
-   ✔ LESS:dist @done (13-12-15 00:45)
-   ✔ RequireJS:dist @done (13-12-15 00:45)
-   ✔ Copy @done (13-12-15 00:45)
-   ✔ Revision @done (13-12-15 00:45)
- ✔ Serve workflow @done (13-12-15 00:46)
-   ✔ Dev @done (13-12-15 00:46)
-     ✔ Clean:serve @done (13-12-15 00:46)
-     ✔ LESS:dev @done (13-12-15 00:46)
-     ✔ RequireJS:dev @done (13-12-15 00:46)
-     ✔ Connect:livereload @done (13-12-15 00:46)
-   ✔ Build @done (13-12-15 00:46)
-     ✔ Run Build workflow @done (13-12-15 00:46)
-     ✔ Connect @done (13-12-15 00:46)
- ✔ Default workflow @done (13-12-15 00:46)
-   ✔ JSHint @done (13-12-15 00:46)
-   ✔ Run Build workflow @done (13-12-15 00:46)
-
-RequireJS optional items:
-  ✔ jQuery @done (13-12-15 02:36)
-  ✔ Handlebars @done (13-12-15 02:36)
-
-NPM:
- ✔ Grunt dependencies (--save to add to the package.json) @done (13-12-15 12:52)
-   ✔ Clean @done (13-12-15 00:46)
-   ✔ Connect @done (13-12-15 00:46)
-   ✔ Watch @done (13-12-15 00:46)
-   ✔ Modernizr @done (13-12-15 00:47)
-   ✔ LESS @done (13-12-15 00:46)
-   ✔ RequireJS @done (13-12-15 00:46)
-   ✔ jsHint @done (13-12-15 00:46)
-   ✔ Rev @done (13-12-15 00:46)
-   ✔ LiveReload @done (13-12-15 00:46)
-   ✔ Imagemin @done (13-12-15 00:46)
-   ✔ SVGmin @done (13-12-15 00:46)
-   ✔ HTMLmin @done (13-12-15 00:46)
-   ✔ Copy @done (13-12-15 00:46)
-   ✔ HandleBars @done (13-12-15 12:52)
-   ✔ Concurrent @done (13-12-15 00:46)
-
-Other tasks:
-  ✔ Create sub-generator with Handlebars @done (13-12-15 02:33)
-  ✔ Create sub-generator with jQuery @done (13-12-15 02:33)
-  ✔ Add generator to Yeoman repo @done (13-12-15 21:14)
-  ✔ Solve issue with modernizr folder permissions @done (13-12-15 02:33)
-  ✔ Distribute LESS files according to SMACSS (http://smacss.com/book/) @done (13-12-15 23:36)
-  ✔ Improve documentation @done (13-12-16 00:20)
-  ☐ Add tests to the generator
-  ☐ Create article about Yeoman
-  ✔ Add http://fontawesome.io/get-started/ @done (14-01-15 23:36)
-  ✔ Development testing: @done (14-01-15 23:02)
-    ✔ LESS @done (14-01-15 23:02)
-    ✔ Modernizr @done (14-01-15 23:02)
-    ✔ Handlebars @done (14-01-15 23:02)
-    ✔ jQuery @done (14-01-15 23:02)
-    ✔ Images @done (14-01-15 23:02)
-
+Improvements
+ ☐ Improve index.js according to jshint rules
+ ☐ Add bootstrap
+ ☐ Re-check less structure
+ ☐ Re-check require-js
+ ☐ Fix styles.less folders
+ ☐ Update readme
