@@ -9,7 +9,8 @@ Express
  ☐ Check txt fules
 
 Improvements
- ☐ Improve index.js according to jshint rules
+ ☐ Add tests for index
+ ☐ Improve index.js
  ☐ Add bootstrap
  ☐ Re-check less structure
  ☐ Re-check require-js

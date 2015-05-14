@@ -1,4 +1,4 @@
-/*jshint node:true*/
+/*eslint-env node:true*/
 
 (function (global, undefined) {
 
@@ -215,6 +215,7 @@
     AlchemyGenerator.prototype.dotfiles = function dotfiles() {
         this.copy('editorconfig', '.editorconfig');
         this.copy('gitignore', '.gitignore');
+        this.copy('eslintrc', '.eslintrc');
         this.copy('jshintrc', '.jshintrc');
         this.template('bowerrc', '.bowerrc');
     };
