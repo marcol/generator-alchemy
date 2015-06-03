@@ -1,7 +1,7 @@
 language: node_js
 node_js:
-  - '0.8'
   - '0.10'
+  - '0.12'
 before_install:
   - currentfolder=${PWD##*/}
   - if [ "$currentfolder" != 'generator-alchemy' ]; then cd .. && eval "mv $currentfolder generator-alchemy" && cd generator-alchemy; fi
