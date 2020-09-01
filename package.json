@@ -22,7 +22,11 @@
     "test": "jest --passWithNoTests",
     "ci": "jest --passWithNoTests"
   },
-  "dependencies": {},
+  "dependencies": {
+    "ora": "^5.0.0",
+    "sugar-chalk": "^1.6.0",
+    "yeoman-generator": "^4.12.0"
+  },
   "devDependencies": {
     "@commitlint/cli": "^9.1.2",
     "@commitlint/config-conventional": "^9.1.2",
@@ -41,7 +45,9 @@
     "jest": "^26.4.2",
     "remark-cli": "^8.0.1",
     "remark-lint": "^7.0.1",
-    "remark-preset-lint-markdown-style-guide": "^3.0.1"
+    "remark-preset-lint-markdown-style-guide": "^3.0.1",
+    "yeoman-assert": "^3.1.1",
+    "yeoman-test": "^3.0.0"
   },
   "husky": {
     "hooks": {
