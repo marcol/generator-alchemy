@@ -18,7 +18,8 @@
   "scripts": {
     "lint:js": "eslint",
     "lint": "yarn lint:js; yarn lint:md",
-    "lint:md": "remark ."
+    "lint:md": "remark .",
+    "test": "yarn lint"
   },
   "dependencies": {},
   "devDependencies": {
