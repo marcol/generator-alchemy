@@ -22,28 +22,27 @@ module.exports = class Alchemy extends Generator {
   }
 
   /**
-   * Saving configurations and configure the project (creating .editorconfig
-   * files and other metadata files)
+   * Saving configurations and configure the project
    * @return void
    */
-  configuring () {
-    require('./actions/config')(this)
+  async configuring () {
+    await require('./actions/config')(this)
   }
 
   /**
-   * Qrite the generator specific files (routes, controllers, etc)
+   * Write the generator specific files
    * @return void
    */
-  writing () {
-    require('./actions/write')(this)
+  async writing () {
+    await require('./actions/write')(this)
   }
 
   /**
    * Install (npm...)
    * @return void
    */
-  install () {
-    require('./actions/install')(this)
+  async install () {
+    await require('./actions/install')(this)
   }
 
   /**
