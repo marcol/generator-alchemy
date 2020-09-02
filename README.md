@@ -1,3 +1,7 @@
+[![NPM Downloads](https://img.shields.io/npm/dt/generator-alchemy?logo=npm&style=flat-square)](https://www.npmjs.com/package/generator-alchemy)
+[![NPM Version](https://img.shields.io/npm/v/generator-alchemy?logo=npm&style=flat-square)](https://www.npmjs.com/package/generator-alchemy)
+[![CI Tests](https://img.shields.io/github/workflow/status/marcol/generator-alchemy/CI?logo=github&style=flat-square)](https://github.com/marcol/generator-alchemy)
+
 # generator-alchemy
 `generator-alchemy` is a Yeoman generator to kick start web projects. It setups
 the environment with webpack, babel and a server. It also sets up the dotfiles
