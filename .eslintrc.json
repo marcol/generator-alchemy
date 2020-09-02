@@ -17,7 +17,8 @@
     "html",
     "markdown",
     "json-format",
-    "filenames"
+    "filenames",
+    "jest"
   ],
   "rules": {
     "indent": ["warn", 2],
