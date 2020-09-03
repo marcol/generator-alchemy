@@ -23,7 +23,6 @@
     "ci": "jest --passWithNoTests"
   },
   "dependencies": {
-    "ora": "^5.0.0",
     "sugar-chalk": "^1.6.0",
     "yeoman-generator": "^4.12.0"
   },

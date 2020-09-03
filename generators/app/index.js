@@ -1,5 +1,4 @@
 const Generator = require('yeoman-generator')
-const { info } = require('sugar-chalk')
 
 module.exports = class Alchemy extends Generator {
   /**
@@ -17,7 +16,6 @@ module.exports = class Alchemy extends Generator {
    */
   async prompting () {
     const prompts = require('./actions/prompt')(this)
-    info('We need some input from you to setup your project')
     this.answers = await this.prompt(prompts)
   }
 
