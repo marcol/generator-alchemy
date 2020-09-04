@@ -29,22 +29,22 @@ describe('Tests commitlint functionality', function () {
     rimraf.sync(testPath)
   })
 
-  it('checks if commitlint files are present', () => {
+  test('checks if commitlint files are present', () => {
     const files = config.files.map((cur) => cur.target)
     assert.file(files)
   })
 
-  it('checks package.json commitlint settings', () => {
+  test('checks package.json commitlint settings', () => {
     assert.jsonFileContent(packageJSON, config.settings())
   })
 
-  it('checks package.json commitlint dependencies', () => {
+  test('checks package.json commitlint dependencies', () => {
     config.dependencies.forEach((cur) => {
       assert.fileContent(packageJSON, new RegExp(cur))
     })
   })
 
-  it('checks package.json commitlint dev dependencies', () => {
+  test('checks package.json commitlint dev dependencies', () => {
     config.devDependencies.forEach((cur) => {
       assert.fileContent(packageJSON, new RegExp(cur))
     })

@@ -29,22 +29,22 @@ describe('Tests eslint', function () {
     rimraf.sync(testPath)
   })
 
-  it('checks if eslint files are present', () => {
+  test('checks if eslint files are present', () => {
     const files = config.files.map((cur) => cur.target)
     assert.file(files)
   })
 
-  it('checks package.json eslint script', () => {
+  test('checks package.json eslint script', () => {
     assert.fileContent(packageJSON, new RegExp('lint:js'))
   })
 
-  it('checks package.json eslint dependencies', () => {
+  test('checks package.json eslint dependencies', () => {
     config.dependencies.forEach((cur) => {
       assert.fileContent(packageJSON, new RegExp(cur))
     })
   })
 
-  it('checks package.json eslint dev dependencies', () => {
+  test('checks package.json eslint dev dependencies', () => {
     config.devDependencies.forEach((cur) => {
       assert.fileContent(packageJSON, new RegExp(cur))
     })

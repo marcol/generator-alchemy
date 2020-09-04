@@ -14,7 +14,7 @@ describe('Tests gitignore functionality', function () {
     await helpers.run(path.join(__dirname, '../generators/app'))
       .inDir(testPath)
       .withOptions({
-        'skip-install': false
+        'skip-install': true
       })
       .withPrompts(Object.assign({
         gitignore: true
@@ -28,7 +28,7 @@ describe('Tests gitignore functionality', function () {
     rimraf.sync(testPath)
   })
 
-  it('checks if gitignore file are present', () => {
+  test('checks if gitignore file are present', () => {
     const files = config.files.map((cur) => cur.target)
     assert.file(files)
   })

@@ -3,8 +3,11 @@ const { info } = require('sugar-chalk')
 module.exports = (gen) => {
   info('Writing files')
 
-  const features = require('../features')
   let files = []
+  const features = require('../features')
+  const data = Object.assign({
+    year: (new Date()).getFullYear()
+  }, gen.answers)
   const packageJSON = {
     scripts: {}
   }
@@ -27,6 +30,6 @@ module.exports = (gen) => {
     gen.fs.copyTpl(
       gen.templatePath(cur.source),
       gen.destinationPath(cur.target),
-      gen.answers)
+      data)
   })
 }
