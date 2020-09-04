@@ -26,7 +26,7 @@ module.exports = {
   prompt: (get) => {
     return [{
       type: 'confirm',
-      name: 'commitlint.js',
+      name: 'commitlint',
       message: 'Do you want to use commitlint?',
       default: true
     }]

@@ -1,6 +1,7 @@
 const slugify = require('@sindresorhus/slugify')
 
 module.exports = {
+  default: true,
   files: [],
   dependencies: [],
   devDependencies: [],

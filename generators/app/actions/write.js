@@ -8,11 +8,12 @@ module.exports = (gen) => {
   const packageJSON = {
     scripts: {}
   }
-
   // get scripts and settings
   features.forEach((cur) => {
-    if (gen.answers[cur]) {
-      const feat = require('../features/' + cur)
+    const feat = require('../features/' + cur)
+    const feature = cur.replace('.js', '')
+
+    if (gen.answers[feature] || feat.default) {
       Object.assign(packageJSON, feat.settings(gen.answers))
       Object.assign(packageJSON.scripts, feat.scripts)
       files = files.concat(feat.files)

@@ -8,8 +8,10 @@ module.exports = (gen) => {
   let devDependencies = []
 
   features.forEach((cur) => {
-    if (gen.answers[cur]) {
-      const feat = require('../features/' + cur)
+    const feat = require('../features/' + cur)
+    const feature = cur.replace('.js', '')
+
+    if (gen.answers[feature] || feat.default) {
       dependencies = dependencies.concat(feat.dependencies)
       devDependencies = devDependencies.concat(feat.devDependencies)
     }
