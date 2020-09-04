@@ -28,8 +28,14 @@ yo uncomplicated
 ```
 and follow the instruction, selecting the preferred options.
 
-## Options
-
 ## Features
+
+### eslint
+Adds [eslint](https://eslint.org/) with `eslintrc.json` and `eslintignore`
+configuration files. Installs eslint basic plugins.
+Sets [JavaScript Standard Style](https://standardjs.com/) as default.
+
+### commitlint
+Adds linting to git commit and push through [commitlint](https://commitlint.js.org/#/).
 
 ## Cookbook

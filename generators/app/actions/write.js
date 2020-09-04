@@ -11,10 +11,12 @@ module.exports = (gen) => {
 
   // get scripts and settings
   features.forEach((cur) => {
-    const feat = require('../features/' + cur)
-    Object.assign(packageJSON, feat.settings(gen.answers))
-    Object.assign(packageJSON.scripts, feat.scripts)
-    files = files.concat(feat.files)
+    if (gen.answers[cur]) {
+      const feat = require('../features/' + cur)
+      Object.assign(packageJSON, feat.settings(gen.answers))
+      Object.assign(packageJSON.scripts, feat.scripts)
+      files = files.concat(feat.files)
+    }
   })
 
   // write template files

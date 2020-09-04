@@ -28,7 +28,7 @@ module.exports = {
   prompt: (get) => {
     return [{
       type: 'confirm',
-      name: 'eslint',
+      name: 'eslint.js',
       message: 'Do you want to use eslint?',
       default: true
     }]
