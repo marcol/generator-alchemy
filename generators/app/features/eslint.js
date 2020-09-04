@@ -18,7 +18,7 @@ module.exports = {
     'lint:js': 'eslint',
     lint: 'yarn lint:js'
   },
-  settings: {},
+  settings () {},
   prompt: (get) => {
     return [{
       type: 'confirm',
