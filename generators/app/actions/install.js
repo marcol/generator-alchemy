@@ -7,6 +7,7 @@ module.exports = (gen) => {
   let dependencies = []
   let devDependencies = []
 
+  // get dependencies from default and enabled packages
   features.forEach((cur) => {
     const feat = require('../features/' + cur)
     const feature = cur.replace('.js', '')

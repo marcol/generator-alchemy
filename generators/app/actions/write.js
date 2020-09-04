@@ -8,7 +8,8 @@ module.exports = (gen) => {
   const packageJSON = {
     scripts: {}
   }
-  // get scripts and settings
+
+  // get scripts, settings and files from default and enabled features
   features.forEach((cur) => {
     const feat = require('../features/' + cur)
     const feature = cur.replace('.js', '')
