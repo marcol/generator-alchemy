@@ -1,0 +1,41 @@
+#!/bin/sh
+
+# logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# folders
+build/
+lib-covx/
+public/
+node_modules/
+temp/
+tmp/
+
+# dotenv environment variables file
+.env
+.env.test
+.env.local
+
+# files
+*.diff
+*.err
+*.lcov
+*.orig
+*.rej
+*.sass-cache
+*.sw?
+*.tgz
+*.vi
+._*
+.DS_Store
+.eslintcache
+.npm
+.Spotlight-V100
+.Trashes
+.yarn-integrity
+Desktop.ini
+Thumbs.db

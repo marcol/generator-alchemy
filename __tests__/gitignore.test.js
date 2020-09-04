@@ -2,9 +2,8 @@ const assert = require('yeoman-assert')
 const helpers = require('yeoman-test')
 const path = require('path')
 const rimraf = require('rimraf')
-const testPath = path.join(__dirname, 'tmp-commitlint/')
-const packageJSON = path.join(testPath, 'package.json')
-const config = require('../generators/app/features/commitlint')
+const testPath = path.join(__dirname, 'tmp-ignore/')
+const config = require('../generators/app/features/gitignore')
 const prompts = require('../__mocks__/prompts')
 const { silent } = require('sugar-chalk')
 
@@ -29,24 +28,8 @@ describe('Tests commitlint functionality', function () {
     rimraf.sync(testPath)
   })
 
-  it('checks if commitlint files are present', () => {
+  it('checks if gitignore file are present', () => {
     const files = config.files.map((cur) => cur.target)
     assert.file(files)
-  })
-
-  it('checks package.json commitlint settings', () => {
-    assert.jsonFileContent(packageJSON, config.settings())
-  })
-
-  it('checks package.json commitlint dependencies', () => {
-    config.dependencies.forEach((cur) => {
-      assert.fileContent(packageJSON, new RegExp(cur))
-    })
-  })
-
-  it('checks package.json commitlint dev dependencies', () => {
-    config.devDependencies.forEach((cur) => {
-      assert.fileContent(packageJSON, new RegExp(cur))
-    })
   })
 })
