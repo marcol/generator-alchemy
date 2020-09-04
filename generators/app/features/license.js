@@ -1,7 +1,7 @@
 module.exports = {
   files: [{
-    source: '../templates/_license',
-    target: 'license'
+    source: '../templates/_LICENSE',
+    target: 'LICENSE'
   }],
   dependencies: [],
   devDependencies: [],
