@@ -2,13 +2,13 @@ const assert = require('yeoman-assert')
 const helpers = require('yeoman-test')
 const path = require('path')
 const rimraf = require('rimraf')
-const testPath = path.join(__dirname, 'tmp-eslint/')
+const testPath = path.join(__dirname, 'tmp-commitlint/')
 const packageJSON = path.join(testPath, 'package.json')
-const config = require('../generators/app/features/eslint')
+const config = require('../generators/app/features/commitlint')
 const prompts = require('../__mocks__/prompts')
 const { silent } = require('sugar-chalk')
 
-describe('Tests eslint', function () {
+describe('Tests commitlint functionality', function () {
   beforeAll(async (done) => {
     silent(true)
 
@@ -18,7 +18,7 @@ describe('Tests eslint', function () {
         'skip-install': false
       })
       .withPrompts(Object.assign({
-        eslint: true
+        commitlint: true
       }, prompts))
 
     silent(false)
@@ -29,22 +29,17 @@ describe('Tests eslint', function () {
     rimraf.sync(testPath)
   })
 
-  it('checks if eslint files are present', () => {
-    const files = config.files.map((cur) => cur.target)
-    assert.file(files)
+  it('checks package.json commitlint settings', () => {
+    assert.jsonFileContent(packageJSON, config.settings())
   })
 
-  it('checks package.json eslint script', () => {
-    assert.fileContent(packageJSON, new RegExp('lint:js'))
-  })
-
-  it('checks package.json eslint dependencies', () => {
+  it('checks package.json commitlint dependencies', () => {
     config.dependencies.forEach((cur) => {
       assert.fileContent(packageJSON, new RegExp(cur))
     })
   })
 
-  it('checks package.json eslint dev dependencies', () => {
+  it('checks package.json commitlint dev dependencies', () => {
     config.devDependencies.forEach((cur) => {
       assert.fileContent(packageJSON, new RegExp(cur))
     })
