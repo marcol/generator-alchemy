@@ -17,8 +17,7 @@
     "html",
     "markdown",
     "json-format",
-    "filenames",
-    "jest"
+    "filenames"
   ],
   "rules": {
     "indent": ["warn", 2],
@@ -33,16 +32,5 @@
   "settings": {
     "html/indent": "+2",
     "html/report-bad-indent": "warn"
-  },
-  "overrides": [
-    {
-      "files": [
-        "**/{__tests__,tests}/*.{j,t}s?(x)",
-        "**/{__tests__,tests}/**/*.{j,t}s?(x)"
-      ],
-      "env": {
-        "jest/globals": true
-      }
-    }
-  ]
+  }
 }

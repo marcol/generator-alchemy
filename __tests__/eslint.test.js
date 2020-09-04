@@ -30,7 +30,8 @@ describe('Tests eslint', function () {
   })
 
   it('checks if eslint files are present', () => {
-    assert.file(config.files)
+    const files = config.files.map((cur) => cur.target)
+    assert.file(files)
   })
 
   it('checks package.json eslint script', () => {

@@ -1,5 +1,11 @@
 module.exports = {
-  files: [],
+  files: [{
+    source: '../templates/_.eslintrc.json',
+    target: '.eslintrc.json'
+  }, {
+    source: '../templates/_.eslintignore',
+    target: '.eslintignore.json'
+  }],
   dependencies: [],
   devDependencies: [
     'eslint',
