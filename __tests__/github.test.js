@@ -2,14 +2,14 @@ const assert = require('yeoman-assert')
 const helpers = require('yeoman-test')
 const path = require('path')
 const rimraf = require('rimraf')
-const slugify = require('@sindresorhus/slugify')
-const feature = 'package'
+const feature = 'github'
 const testPath = path.join(__dirname, 'tmp-' + feature)
-const packageJSON = path.join(testPath, 'package.json')
+const config = require('../generators/app/features/' + feature)
+const files = config.files.map((cur) => cur.target)
 const prompts = require('../__mocks__/prompts')
 const { silent } = require('sugar-chalk')
 
-describe('Tests package.json', function () {
+describe('Tests github workflows feature', function () {
   beforeAll(async (done) => {
     silent(true)
 
@@ -18,7 +18,9 @@ describe('Tests package.json', function () {
       .withOptions({
         'skip-install': true
       })
-      .withPrompts(prompts)
+      .withPrompts(Object.assign({
+        github: true
+      }, prompts))
 
     silent(false)
     done()
@@ -28,10 +30,7 @@ describe('Tests package.json', function () {
     rimraf.sync(testPath)
   })
 
-  test('checks if inserted information is correct', () => {
-    assert.jsonFileContent(packageJSON, {
-      name: slugify(prompts.name),
-      author: prompts.author + ' <' + prompts.email + '>'
-    })
+  test('checks if workflows files is present', () => {
+    assert.file(files)
   })
 })

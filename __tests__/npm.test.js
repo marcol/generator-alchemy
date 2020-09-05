@@ -2,8 +2,9 @@ const assert = require('yeoman-assert')
 const helpers = require('yeoman-test')
 const path = require('path')
 const rimraf = require('rimraf')
-const testPath = path.join(__dirname, 'tmp-npm/')
-const config = require('../generators/app/features/npm')
+const feature = 'npm'
+const testPath = path.join(__dirname, 'tmp-' + feature)
+const config = require('../generators/app/features/' + feature)
 const prompts = require('../__mocks__/prompts')
 const { silent } = require('sugar-chalk')
 

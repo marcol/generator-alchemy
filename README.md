@@ -46,6 +46,9 @@ HTML liting is done with [htmlhint](https://htmlhint.com/docs/user-guide/getting
 ### githooks
 Set githooks for commit and push. Adds linting to git commit through [commitlint](https://commitlint.js.org/#/). Also adds script `ci.js` to run on push.
 
+### github worflows
+Adds two [github workflows](https://docs.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow), one for ci and another to publish the npm package. In order to publish tha package you need to define `secrets.NPM_TOKEN`, you can get this token in your account on [npmjs.com](https://www.npmjs.com/).
+
 ### npm
 Adds `.npmignore` file to remove assets from the package to be published, as default `__tests__` and `__mocks__` are removed. Also adds `.npmrc` file.
 

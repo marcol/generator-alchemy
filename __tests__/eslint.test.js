@@ -2,9 +2,10 @@ const assert = require('yeoman-assert')
 const helpers = require('yeoman-test')
 const path = require('path')
 const rimraf = require('rimraf')
-const testPath = path.join(__dirname, 'tmp-eslint/')
+const feature = 'eslint'
+const testPath = path.join(__dirname, 'tmp-' + feature)
 const packageJSON = path.join(testPath, 'package.json')
-const config = require('../generators/app/features/eslint')
+const config = require('../generators/app/features/' + feature)
 const prompts = require('../__mocks__/prompts')
 const { silent } = require('sugar-chalk')
 
