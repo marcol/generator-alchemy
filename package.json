@@ -46,7 +46,6 @@
     "jest": "^26.4.2",
     "ora": "^5.0.0",
     "remark-cli": "^8.0.1",
-    "remark-lint": "^7.0.1",
     "remark-preset-lint-recommended": "^4.0.1",
     "shelljs": "^0.8.4",
     "yeoman-assert": "^3.1.1",
