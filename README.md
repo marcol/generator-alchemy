@@ -37,6 +37,9 @@ Adds [eslint](https://eslint.org/) with `eslintrc.json` and `eslintignore` confi
 ### Markdown linting
 Markdown linting is done with [remarklint](https://github.com/remarkjs/remark-lint). It has the preset `remark-preset-lint-recommended`. The script `lint:md` is added to `package.json`.
 
+### CSS linting
+[Stylelint](https://stylelint.io/) is used to lint CSS. By default is using [stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard) you can configure the rules in the file `.stylelinrc.json`
+
 ### HTML linting
 HTML liting is done with [htmlhint](https://htmlhint.com/docs/user-guide/getting-started). You can configure the rules by editing the file `.htmlhintrc`.
 
