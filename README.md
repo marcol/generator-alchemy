@@ -28,8 +28,17 @@ and follow the instruction, selecting the preferred options.
 
 ## Features
 
-### eslint
+### License
+Adds a [ISC license](https://en.wikipedia.org/wiki/ISC_license) file with the name and email of the author.
+
+### JS linting
 Adds [eslint](https://eslint.org/) with `eslintrc.json` and `eslintignore` configuration files. Installs eslint basic plugins. Sets [JavaScript Standard Style](https://standardjs.com/) as default. The script `lint:js` is added to `package.json`.
+
+### Markdown linting
+Markdown linting is done with [remarklint](https://github.com/remarkjs/remark-lint). It has the preset `remark-preset-lint-recommended`. The script `lint:md` is added to `package.json`.
+
+### HTML linting
+HTML liting is done with [htmlhint](https://htmlhint.com/docs/user-guide/getting-started). You can configure the rules by editing the file `.htmlhintrc`.
 
 ### githooks
 Set githooks for commit and push. Adds linting to git commit through [commitlint](https://commitlint.js.org/#/). Also adds script `ci.js` to run on push.
@@ -37,14 +46,8 @@ Set githooks for commit and push. Adds linting to git commit through [commitlint
 ### npm
 Adds `.npmignore` file to remove assets from the package to be published, as default `__tests__` and `__mocks__` are removed. Also adds `.npmrc` file.
 
-### License
-Adds a [ISC license](https://en.wikipedia.org/wiki/ISC_license) file with the name and email of the author.
-
 ### gitignore
 Adds `.gitignore` file to prevent tracking of wanted files or folder. It has already a set of common files that usually should not be part of the git repository.
-
-### Markdown linting
-Markdown linting is done with [remarklint](https://github.com/remarkjs/remark-lint). It has the preset `remark-preset-lint-recommended`. The script `lint:md` is added to `package.json`.
 
 ### Jest
 Sets up [jest](https://jestjs.io/) to be used for tests, with an example test. Also adds the test script.
