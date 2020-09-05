@@ -10,19 +10,19 @@ to make sure code quality, reliability and test/build tools.
 Feel free to suggest improvements.
 
 ## Install
-1. Install Yeoman (CLI)
+Install Yeoman (CLI)
 ```bash
 yarn add yo --global
 ````
 If you are using npm run `npm install -g yo`
 
-1. Now install the ultimate generator
+Now install the ultimate generator
 ```bash
 yarn add generator-uncomplicated --global
 ```
 or `npm install -g generator-uncomplicated`
 
-1. Finally run the generator
+Finally run the generator
 ```bash
 yo uncomplicated
 ```
@@ -33,9 +33,19 @@ and follow the instruction, selecting the preferred options.
 ### eslint
 Adds [eslint](https://eslint.org/) with `eslintrc.json` and `eslintignore`
 configuration files. Installs eslint basic plugins.
-Sets [JavaScript Standard Style](https://standardjs.com/) as default.
+Sets [JavaScript Standard Style](https://standardjs.com/) as default. The
+script `lint:js` is added to `package.json`.
 
 ### commitlint
 Adds linting to git commit and push through [commitlint](https://commitlint.js.org/#/).
 
-## Cookbook
+### npm
+
+### License
+
+### gitignore
+
+### Markdown linting
+Markdown linting is done with [remarklint](https://github.com/remarkjs/remark-lint).
+It has the preset `remark-preset-lint-recommended`. The script `lint:md` is
+added to `package.json`.

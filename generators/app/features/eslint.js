@@ -21,8 +21,7 @@ module.exports = {
     'eslint-config-standard'
   ],
   scripts: {
-    'lint:js': 'eslint',
-    lint: 'yarn lint:js'
+    'lint:js': 'eslint'
   },
   settings () {},
   prompt: (get) => {
