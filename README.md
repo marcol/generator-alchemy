@@ -46,6 +46,9 @@ Adds `.gitignore` file to prevent tracking of wanted files or folder. It has alr
 ### Markdown linting
 Markdown linting is done with [remarklint](https://github.com/remarkjs/remark-lint). It has the preset `remark-preset-lint-recommended`. The script `lint:md` is added to `package.json`.
 
+### Jest
+Sets up [jest](https://jestjs.io/) to be used for tests, with an example test. Also adds the test script.
+
 ## Cookbook
 ### Using on ongoing projects
 You can add missing feature to your existing projects. The generator asks you if you want to override any of the files that it has on the list to create. To be safe apply it to a repository without uncommitted changes so you can test and revert to a previous version if necessary.
