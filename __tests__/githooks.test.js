@@ -2,13 +2,14 @@ const assert = require('yeoman-assert')
 const helpers = require('yeoman-test')
 const path = require('path')
 const rimraf = require('rimraf')
-const testPath = path.join(__dirname, 'tmp-commitlint/')
+const feature = 'githooks'
+const testPath = path.join(__dirname, 'tmp-' + feature)
 const packageJSON = path.join(testPath, 'package.json')
-const config = require('../generators/app/features/commitlint')
+const config = require('../generators/app/features/' + feature)
 const prompts = require('../__mocks__/prompts')
 const { silent } = require('sugar-chalk')
 
-describe('Tests commitlint functionality', function () {
+describe('Tests githooks functionality', function () {
   beforeAll(async (done) => {
     silent(true)
 
@@ -18,7 +19,7 @@ describe('Tests commitlint functionality', function () {
         'skip-install': false
       })
       .withPrompts(Object.assign({
-        commitlint: true
+        githooks: true
       }, prompts))
 
     silent(false)
@@ -29,22 +30,22 @@ describe('Tests commitlint functionality', function () {
     rimraf.sync(testPath)
   })
 
-  test('checks if commitlint files are present', () => {
+  test('checks if githooks files are present', () => {
     const files = config.files.map((cur) => cur.target)
     assert.file(files)
   })
 
-  test('checks package.json commitlint settings', () => {
+  test('checks package.json githooks settings', () => {
     assert.jsonFileContent(packageJSON, config.settings())
   })
 
-  test('checks package.json commitlint dependencies', () => {
+  test('checks package.json githooks dependencies', () => {
     config.dependencies.forEach((cur) => {
       assert.fileContent(packageJSON, new RegExp(cur))
     })
   })
 
-  test('checks package.json commitlint dev dependencies', () => {
+  test('checks package.json githooks dev dependencies', () => {
     config.devDependencies.forEach((cur) => {
       assert.fileContent(packageJSON, new RegExp(cur))
     })

@@ -3,9 +3,10 @@
 [![CI Tests](https://img.shields.io/github/workflow/status/marcol/generator-alchemy/CI?logo=github&style=flat-square)](https://github.com/marcol/generator-alchemy)
 
 # generator-alchemy
-`generator-alchemy` is a Yeoman generator to kick start web projects. It setups
-the environment with webpack, babel and a server. It also sets up the dotfiles
-to make sure code quality, reliability and test/build tools.
+`generator-alchemy` is a Yeoman generator to kick start web projects or just
+add missing items to your projects. It setups the environment with webpack,
+babel and a server. It also sets up the dotfiles to make sure code quality,
+reliability and test/build tools.
 
 Feel free to suggest improvements.
 
@@ -36,8 +37,9 @@ configuration files. Installs eslint basic plugins.
 Sets [JavaScript Standard Style](https://standardjs.com/) as default. The
 script `lint:js` is added to `package.json`.
 
-### commitlint
-Adds linting to git commit and push through [commitlint](https://commitlint.js.org/#/).
+### githooks
+Set githooks for commit and push. Adds linting to git commit through [commitlint](https://commitlint.js.org/#/).
+Also adds script `ci.js` to run on push.
 
 ### npm
 Adds `.npmignore` file to remove assets from the package to be published, as
@@ -56,3 +58,10 @@ repository.
 Markdown linting is done with [remarklint](https://github.com/remarkjs/remark-lint).
 It has the preset `remark-preset-lint-recommended`. The script `lint:md` is
 added to `package.json`.
+
+## Cookbook
+### Using on ongoing projects
+You can add missing feature to your existing projects. The generator asks you
+if you want to override any of the files that it has on the list to create. To
+be safe apply it to a repository without uncommitted changes so you can test and
+revert to a previous version if necessary.
