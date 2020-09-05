@@ -40,10 +40,17 @@ script `lint:js` is added to `package.json`.
 Adds linting to git commit and push through [commitlint](https://commitlint.js.org/#/).
 
 ### npm
+Adds `.npmignore` file to remove assets from the package to be published, as
+default `__tests__` and `__mocks__` are removed. Also adds `.npmrc` file.
 
 ### License
+Adds a [ISC license](https://en.wikipedia.org/wiki/ISC_license) file with the
+name and email of the author.
 
 ### gitignore
+Adds `.gitignore` file to prevent tracking of wanted files or folder. It has
+already a set of common files that usually should not be part of the git
+repository.
 
 ### Markdown linting
 Markdown linting is done with [remarklint](https://github.com/remarkjs/remark-lint).
