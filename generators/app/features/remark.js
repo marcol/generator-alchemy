@@ -5,7 +5,7 @@ module.exports = {
   }],
   dependencies: [],
   devDependencies: [
-    'remark-lint',
+    'remark-cli',
     'remark-preset-lint-recommended'
   ],
   scripts: {
