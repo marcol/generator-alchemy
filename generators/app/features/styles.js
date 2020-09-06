@@ -1,22 +1,16 @@
 module.exports = {
-  files: [{
-    source: '../templates/_.stylelintrc.json',
-    target: '.stylelintrc.json'
-  }],
+  files: [],
   dependencies: [],
   devDependencies: [
-    'stylelint',
-    'stylelint-config-standard'
+    'normalize.css'
   ],
-  scripts: {
-    'lint:css': 'stylelint **/*.css'
-  },
+  scripts: {},
   settings () {},
   prompt: (get) => {
     return [{
       type: 'confirm',
       name: 'styles',
-      message: 'Do you want to use stylelint to lint CSS?',
+      message: 'What do you want to use for styling?',
       default: true
     }]
   }
