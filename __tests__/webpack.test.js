@@ -16,7 +16,7 @@ describe('Tests webpack', function () {
     await helpers.run(path.join(__dirname, '../generators/app'))
       .inDir(testPath)
       .withOptions({
-        'skip-install': false
+        'skip-install': true
       })
       .withPrompts(Object.assign({
         webpack: true
@@ -43,12 +43,6 @@ describe('Tests webpack', function () {
 
   test('checks package.json webpack dependencies', () => {
     config.dependencies.forEach((cur) => {
-      assert.fileContent(packageJSON, new RegExp(cur))
-    })
-  })
-
-  test('checks package.json webpack dev dependencies', () => {
-    config.devDependencies.forEach((cur) => {
       assert.fileContent(packageJSON, new RegExp(cur))
     })
   })

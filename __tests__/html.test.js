@@ -16,7 +16,7 @@ describe('Tests HTML linting', function () {
     await helpers.run(path.join(__dirname, '../generators/app'))
       .inDir(testPath)
       .withOptions({
-        'skip-install': false
+        'skip-install': true
       })
       .withPrompts(Object.assign({
         eslint: true
@@ -37,11 +37,5 @@ describe('Tests HTML linting', function () {
 
   test('checks package.json htmlhint script', () => {
     assert.fileContent(packageJSON, new RegExp('lint:html'))
-  })
-
-  test('checks package.json htmlhint dev dependencies', () => {
-    config.devDependencies.forEach((cur) => {
-      assert.fileContent(packageJSON, new RegExp(cur))
-    })
   })
 })

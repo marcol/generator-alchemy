@@ -44,7 +44,6 @@ describe('Tests license functionality', function () {
   })
 
   test('checks if license has author email', () => {
-    console.log('here', prompts.email)
     assert.fileContent(files[0], prompts.email)
   })
 })

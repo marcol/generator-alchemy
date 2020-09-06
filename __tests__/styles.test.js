@@ -4,7 +4,6 @@ const path = require('path')
 const rimraf = require('rimraf')
 const feature = 'styles'
 const testPath = path.join(__dirname, 'tmp-' + feature)
-const packageJSON = path.join(testPath, 'package.json')
 const config = require('../generators/app/features/' + feature)
 const prompts = require('../__mocks__/prompts')
 const { silent } = require('sugar-chalk')
@@ -16,7 +15,7 @@ describe('Tests styles', function () {
     await helpers.run(path.join(__dirname, '../generators/app'))
       .inDir(testPath)
       .withOptions({
-        'skip-install': false
+        'skip-install': true
       })
       .withPrompts(Object.assign({
         styles: true
@@ -33,11 +32,5 @@ describe('Tests styles', function () {
   test('checks if styling files are present', () => {
     const files = config.files.map((cur) => cur.target)
     assert.file(files)
-  })
-
-  test('checks package.json styling dev dependencies', () => {
-    config.devDependencies.forEach((cur) => {
-      assert.fileContent(packageJSON, new RegExp(cur))
-    })
   })
 })

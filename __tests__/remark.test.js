@@ -16,7 +16,7 @@ describe('Tests remark lint functionality', function () {
     await helpers.run(path.join(__dirname, '../generators/app'))
       .inDir(testPath)
       .withOptions({
-        'skip-install': false
+        'skip-install': true
       })
       .withPrompts(Object.assign({
         remark: true
@@ -33,12 +33,6 @@ describe('Tests remark lint functionality', function () {
   test('checks if remark file is present', () => {
     const files = config.files.map((cur) => cur.target)
     assert.file(files)
-  })
-
-  test('checks if remark depdencies were installed', () => {
-    config.dependencies.forEach((cur) => {
-      assert.fileContent(packageJSON, new RegExp(cur))
-    })
   })
 
   test('checks if remark lint scripts were added', () => {

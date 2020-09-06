@@ -16,7 +16,7 @@ describe('Tests CSS linting', function () {
     await helpers.run(path.join(__dirname, '../generators/app'))
       .inDir(testPath)
       .withOptions({
-        'skip-install': false
+        'skip-install': true
       })
       .withPrompts(Object.assign({
         css: true
@@ -37,11 +37,5 @@ describe('Tests CSS linting', function () {
 
   test('checks package.json stylelint script', () => {
     assert.fileContent(packageJSON, new RegExp('lint:css'))
-  })
-
-  test('checks package.json stylelint dev dependencies', () => {
-    config.devDependencies.forEach((cur) => {
-      assert.fileContent(packageJSON, new RegExp(cur))
-    })
   })
 })

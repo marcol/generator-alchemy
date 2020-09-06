@@ -16,7 +16,7 @@ describe('Tests githooks functionality', function () {
     await helpers.run(path.join(__dirname, '../generators/app'))
       .inDir(testPath)
       .withOptions({
-        'skip-install': false
+        'skip-install': true
       })
       .withPrompts(Object.assign({
         githooks: true
@@ -37,17 +37,5 @@ describe('Tests githooks functionality', function () {
 
   test('checks package.json githooks settings', () => {
     assert.jsonFileContent(packageJSON, config.settings())
-  })
-
-  test('checks package.json githooks dependencies', () => {
-    config.dependencies.forEach((cur) => {
-      assert.fileContent(packageJSON, new RegExp(cur))
-    })
-  })
-
-  test('checks package.json githooks dev dependencies', () => {
-    config.devDependencies.forEach((cur) => {
-      assert.fileContent(packageJSON, new RegExp(cur))
-    })
   })
 })

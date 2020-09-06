@@ -16,7 +16,7 @@ describe('Tests eslint', function () {
     await helpers.run(path.join(__dirname, '../generators/app'))
       .inDir(testPath)
       .withOptions({
-        'skip-install': false
+        'skip-install': true
       })
       .withPrompts(Object.assign({
         eslint: true
@@ -37,17 +37,5 @@ describe('Tests eslint', function () {
 
   test('checks package.json eslint script', () => {
     assert.fileContent(packageJSON, new RegExp('lint:js'))
-  })
-
-  test('checks package.json eslint dependencies', () => {
-    config.dependencies.forEach((cur) => {
-      assert.fileContent(packageJSON, new RegExp(cur))
-    })
-  })
-
-  test('checks package.json eslint dev dependencies', () => {
-    config.devDependencies.forEach((cur) => {
-      assert.fileContent(packageJSON, new RegExp(cur))
-    })
   })
 })
