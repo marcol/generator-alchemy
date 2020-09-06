@@ -1,108 +1,66 @@
-# generator-alchemy [![Build Status](https://secure.travis-ci.org/marcol/generator-alchemy.svg?branch=master)](https://travis-ci.org/marcol/generator-alchemy)
+[![NPM Downloads](https://img.shields.io/npm/dt/generator-alchemy?logo=npm&style=flat-square)](https://www.npmjs.com/package/generator-alchemy)
+[![NPM Version](https://img.shields.io/npm/v/generator-alchemy?logo=npm&style=flat-square)](https://www.npmjs.com/package/generator-alchemy)
+[![CI Tests](https://img.shields.io/github/workflow/status/marcol/generator-alchemy/CI?logo=github&style=flat-square)](https://github.com/marcol/generator-alchemy)
 
-## Getting Started
+# generator-alchemy
+`generator-alchemy` is a Yeoman generator to kick start web projects or just add missing items to your projects. It setups the environment with webpack, babel and a server. It also sets up the dotfiles to make sure code quality, reliability and test/build tools.
 
-### What is Alchemy?
+Feel free to suggest improvements.
 
-Alchemy is an [Yeoman](http://yeoman.io) generator for Web apps, with RequireJS and LESS. You may add Modernizr, jQuery, Handlebars or Font-Awesome as optional items. RequireJS, LESS and Handlebars are fully supported by grunt tasks to enable a quick and smooth development workflow.
+## Install
+Install Yeoman (CLI)
+```bash
+yarn add yo --global
+````
+If you are using npm run `npm install -g yo`
 
-### Install
-
-To install Alchemy generator you need NPM and Yeoman. To install Yeoman you just need to this:
-
+Now install the ultimate generator
+```bash
+yarn add generator-uncomplicated --global
 ```
-$ npm install -g yo
+or `npm install -g generator-uncomplicated`
+
+Finally run the generator
+```bash
+yo uncomplicated
 ```
+and follow the instruction, selecting the preferred options.
 
-To install generator-alchemy from npm, run:
+## Features
 
-```
-$ npm install -g generator-alchemy
-```
+### License
+Adds a [ISC license](https://en.wikipedia.org/wiki/ISC_license) file with the name and email of the author.
 
-Now you just need to create the folder where you going to place your project and initiate the generator:
+### JS linting
+Adds [eslint](https://eslint.org/) with `eslintrc.json` and `eslintignore` configuration files. Installs eslint basic plugins. Sets [JavaScript Standard Style](https://standardjs.com/) as default. The script `lint:js` is added to `package.json`.
 
-```
-$ yo alchemy
-```
+### Markdown linting
+Markdown linting is done with [remarklint](https://github.com/remarkjs/remark-lint). It has the preset `remark-preset-lint-recommended`. The script `lint:md` is added to `package.json`.
 
-Follow the instructions and choose the dependencies as you wish... and you are done!
+### CSS linting
+[Stylelint](https://stylelint.io/) is used to lint CSS. By default is using [stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard) you can configure the rules in the file `.stylelinrc.json`
 
+### HTML linting
+HTML liting is done with [htmlhint](https://htmlhint.com/docs/user-guide/getting-started). You can configure the rules by editing the file `.htmlhintrc`.
 
-## Basic Features
+### githooks
+Set githooks for commit and push. Adds linting to git commit through [commitlint](https://commitlint.js.org/#/). Also adds script `ci.js` to run on push.
 
-### RequireJS
+### github worflows
+Adds two [github workflows](https://docs.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow), one for ci and another to publish the npm package. In order to publish tha package you need to define `secrets.NPM_TOKEN`, you can get this token in your account on [npmjs.com](https://www.npmjs.com/).
 
-All the JavaScript is written as AMD modules and required as needed. In development mode, the files are loaded asynchronously for easy debug. When building the distribution package, two uglified files are created: one with all the external resources modules (libraries, plugins...) and the second with all the implemented modules for your web app.
+### npm
+Adds `.npmignore` file to remove assets from the package to be published, as default `__tests__` and `__mocks__` are removed. Also adds `.npmrc` file.
 
-The behavior of RequireJS is defined by the files config-dev.js and config-dist. Visit this [RequireJS example build](https://github.com/jrburke/r.js/blob/master/build/example.build.js) to get more information.
+### gitignore
+Adds `.gitignore` file to prevent tracking of wanted files or folder. It has already a set of common files that usually should not be part of the git repository.
 
-### LESS
+### Jest
+Sets up [jest](https://jestjs.io/) to be used for tests, with an example test. Also adds the test script.
 
-The LESS files are distributed according to the [SMACSS](http://smacss.com/book/) guide.
+### Webpack
+Adds [webpack](https://webpack.js.org/) with loaders for css, images (conventional format + webp), HTML, eslint, babel. Also adds a plugin to generate all the icons, tiles from a single logo file (png or svg)
 
-Along the LESS files structure, there is the [normalize.less](https://github.com/additiveinverse/normalize.less) file that makes the browsers default properties normalised and predictable.
-
-When editing (grunt serve) the LESS files are compiled into a CSS files with an updated source map.
-
-The build process (grunt, grunt build or grunt serve:build) takes the LESS files and generates a single compressed CSS file.
-
-### Grunt Tasks
-
-#### grunt build
-
- * Clean the build folder (dist)
- * Concatenates and uglifies the compiled LESS files
- * Compresses images
- * Compresses SVG files
- * Minifies HTML files
- * OPTIONAL: Concatenates and uglifies the compiled Handlebars templates
- * Concatenates and uglifies the JavaScript resources into 2 files (resources and main)
- * OPTIONAL: Generates the Modernizr dist file by parsing CSS and JavaScript files and defining all the required dependencies
- * Copies files from the development folder (app)
- * Adds revisions to static files
-
-#### grunt
-
- * Runs JSHint against the JavaScript implemented code
- * Runs the build process
-
-#### grunt serve
-
- * Clean server folder (.tmp)
- * Compile LESS files
- * OPTIONAL: Compile Handlebars templates
- * Checks RequireJS configuration
- * Start the connect server with livereload
- * Start watching files:
-  * OPTIONAL: Compiles Handlebars templates on edit
-  * Compiles LESS on edit
-  * Reloads the webpage on any resource change
-
-#### grunt serve:build
-
- * Runs the build process
- * Starts the node server (connect)
-
-
-## Optional Features
-
-### Modernizr
-
-A full feature version of Modernizr is enabled for the development environment. When building the distribution package, a grunt task will check all JavaScript and CSS files to check which Modernizr dependencies are required and add them to the final uglified build file.
-
-### jQuery
-Includes jQuery as one of the resources dependency in RequireJS.
-
-### Handlebars
-
-The Handlebars templates should be added in the templates dev folder. In development mode each file change will force the compiler to recompile the templates into JavaScript that can be handled in the cliend side.
-When building the distribution file all the templates will be compiled into an uglified JavaScript file.
-
-### Font-Awesome
-
-[Font-Awesome](https://github.com/FortAwesome/Font-Awesome) is supported via LESS.
-
-## License
-
-[MIT License](http://en.wikipedia.org/wiki/MIT_License)
+## Cookbook
+### Using on ongoing projects
+You can add missing feature to your existing projects. The generator asks you if you want to override any of the files that it has on the list to create. To be safe apply it to a repository without uncommitted changes so you can test and revert to a previous version if necessary.

@@ -1,43 +1,61 @@
 {
-    "name": "generator-alchemy",
-    "version": "0.2.2",
-    "description": "Alchemy is an Yeoman generator for Web apps, with RequireJS and LESS. You may add Modernizr, jQuery and Handlebars as optional items. RequireJS, LESS and Handlebars are fully supported bu grunt tasks to enable a quick a smooth development workflow.",
-    "keywords": [
-        "yeoman-generator",
-        "yeoman",
-        "webapp",
-        "web",
-        "requirejs",
-        "less",
-        "handlebars",
-        "jquery",
-        "modernizr",
-        "alchemy"
-    ],
-    "homepage": "https://github.com/marcol/generator-alchemy",
-    "bugs": "https://github.com/marcol/generator-alchemy/issues",
-    "author": {
-        "name": "Marco Dias Lopes",
-        "url": "https://github.com/marcol"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/marcol/generator-alchemy.git"
-    },
-    "scripts": {},
-    "dependencies": {
-        "yeoman-generator": "~0.18.0"
-    },
-    "devDependencies": {},
-    "peerDependencies": {
-        "yo": ">=1.0.0"
-    },
-    "engines": {
-        "node": ">=0.10.0",
-        "npm": ">=2.0.0"
-    },
-    "readmeFilename": "readme.md",
-    "licenses": [{
-        "type": "MIT"
-    }]
+  "name": "generator-alchemy",
+  "version": "1.0.0",
+  "description": "Yeoman generator for complete web projects",
+  "keywords": [
+    "web",
+    "yeoman",
+    "generator"
+  ],
+  "homepage": "https://github.com/marcol/generator-alchemy",
+  "bugs": "https://github.com/marcol/generator-alchemy/issues",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcol/generator-alchemy.git"
+  },
+  "author": "Marco Dias Lopes <rhino@pacodacomenda.com>",
+  "scripts": {
+    "lint:js": "eslint",
+    "lint": "yarn lint:js; yarn lint:md",
+    "lint:md": "remark .",
+    "test": "jest --passWithNoTests",
+    "ci": "node ci"
+  },
+  "dependencies": {
+    "@sindresorhus/slugify": "^1.1.0",
+    "sugar-chalk": "^1.6.0",
+    "yeoman-generator": "^4.12.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^9.1.2",
+    "@commitlint/config-conventional": "^9.1.2",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.8.1",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-filenames": "^1.3.2",
+    "eslint-plugin-html": "^6.0.3",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^24.0.0",
+    "eslint-plugin-json-format": "^2.0.1",
+    "eslint-plugin-markdown": "^1.0.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "husky": "^4.2.5",
+    "jest": "^26.4.2",
+    "ora": "^5.0.0",
+    "remark-cli": "^8.0.1",
+    "remark-preset-lint-recommended": "^4.0.1",
+    "shelljs": "^0.8.4",
+    "yeoman-assert": "^3.1.1",
+    "yeoman-test": "^3.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn ci",
+      "pre-commit": "yarn lint",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
 }

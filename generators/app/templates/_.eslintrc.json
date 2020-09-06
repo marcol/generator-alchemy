@@ -1,0 +1,36 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "extends": "standard",
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "html",
+    "markdown",
+    "json-format",
+    "filenames"
+  ],
+  "rules": {
+    "indent": ["warn", 2],
+    "complexity": ["error", 12],
+    "max-depth": ["error", 3],
+    "max-lines": ["error", 120],
+    "max-nested-callbacks": ["error", 3],
+    "max-params": ["error", 3],
+    "max-statements": ["error", 15],
+    "max-statements-per-line": ["error", { "max": 1 }]
+  },
+  "settings": {
+    "html/indent": "+2",
+    "html/report-bad-indent": "warn"
+  }
+}
