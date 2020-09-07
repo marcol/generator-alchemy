@@ -12,7 +12,7 @@ module.exports = new Feature({
       license: 'ISC'
     }
   },
-  prompt (get) {
+  prompt () {
     return [{
       type: 'confirm',
       name: 'license',

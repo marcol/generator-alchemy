@@ -18,7 +18,7 @@ module.exports = new Feature({
       'stylelint-config-standard'
     ]
   },
-  prompt (get) {
+  prompt () {
     return [{
       type: 'confirm',
       name: 'css',

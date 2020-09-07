@@ -10,7 +10,7 @@ module.exports = new Feature({
       target: '.gitrc'
     }]
   },
-  prompt (get) {
+  prompt () {
     return [{
       type: 'confirm',
       name: 'npm',

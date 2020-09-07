@@ -29,7 +29,7 @@ module.exports = new Feature({
     return { 'lint:js': 'eslint' }
   },
   settings () {},
-  prompt (get) {
+  prompt () {
     return [{
       type: 'confirm',
       name: 'eslint',

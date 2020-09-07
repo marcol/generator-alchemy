@@ -7,7 +7,7 @@ module.exports = new Feature({
       target: '.gitignore'
     }]
   },
-  prompt (get) {
+  prompt () {
     return [{
       type: 'confirm',
       name: 'gitignore',

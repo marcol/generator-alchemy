@@ -18,7 +18,7 @@ module.exports = new Feature({
       'lint:md': 'remark .'
     }
   },
-  prompt (get) {
+  prompt () {
     return [{
       type: 'confirm',
       name: 'remark',

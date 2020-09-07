@@ -5,7 +5,7 @@ const rimraf = require('rimraf')
 const feature = 'styles'
 const testPath = path.join(__dirname, 'tmp-' + feature)
 const config = require('../generators/app/features/' + feature)
-const prompts = require('../__mocks__/prompts')
+const options = { styles: true, ...require('../__mocks__/prompts') }
 const { silent } = require('sugar-chalk')
 
 describe('Tests styles', function () {
@@ -17,9 +17,7 @@ describe('Tests styles', function () {
       .withOptions({
         'skip-install': true
       })
-      .withPrompts(Object.assign({
-        styles: true
-      }, prompts))
+      .withPrompts(options)
 
     silent(false)
     done()
@@ -30,7 +28,7 @@ describe('Tests styles', function () {
   })
 
   test('checks if styling files are present', () => {
-    const files = config.files().map((cur) => cur.target)
+    const files = config.files({ answers: options }).map((cur) => cur.target)
     assert.file(files)
   })
 })

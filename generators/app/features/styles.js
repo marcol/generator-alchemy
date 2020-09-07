@@ -6,7 +6,7 @@ module.exports = new Feature({
       'normalize.css'
     ]
   },
-  prompt (get) {
+  prompt () {
     return [{
       type: 'checkbox',
       name: 'styles',

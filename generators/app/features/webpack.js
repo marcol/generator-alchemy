@@ -50,7 +50,7 @@ module.exports = new Feature({
       serve: 'yarn start'
     }
   },
-  prompt (get) {
+  prompt () {
     return [{
       type: 'confirm',
       name: 'webpack',

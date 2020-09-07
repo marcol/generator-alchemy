@@ -33,7 +33,7 @@ module.exports = new Feature({
       ]
     }
   },
-  prompt (get) {
+  prompt () {
     return [{
       type: 'confirm',
       name: 'jest',

@@ -18,7 +18,7 @@ module.exports = new Feature({
     }
   },
   settings () {},
-  prompt (get) {
+  prompt () {
     return [{
       type: 'confirm',
       name: 'html',

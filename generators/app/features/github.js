@@ -10,7 +10,7 @@ module.exports = new Feature({
       target: '.github/workflows/ci.yml'
     }]
   },
-  prompt (get) {
+  prompt () {
     return [{
       type: 'confirm',
       name: 'github',
