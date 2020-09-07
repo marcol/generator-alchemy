@@ -2,6 +2,7 @@ const Feature = require('../Feature')
 const slugify = require('@sindresorhus/slugify')
 
 module.exports = new Feature({
+  priority: 1,
   default: true,
   settings (gen) {
     const data = gen.answers

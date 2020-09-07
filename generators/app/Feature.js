@@ -3,6 +3,10 @@ class Feature {
     this.cfg = config
   }
 
+  priority () {
+    return this.cfg.priority || 3
+  }
+
   default () {
     return this.cfg.default
   }

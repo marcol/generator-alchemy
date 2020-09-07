@@ -5,7 +5,13 @@ const rimraf = require('rimraf')
 const feature = 'styles'
 const testPath = path.join(__dirname, 'tmp-' + feature)
 const config = require('../generators/app/features/' + feature)
-const options = { styles: true, ...require('../__mocks__/prompts') }
+const options = {
+  styles: {
+    webpack: true,
+    material: true
+  },
+  ...require('../__mocks__/prompts')
+}
 const { silent } = require('sugar-chalk')
 
 describe('Tests styles', function () {

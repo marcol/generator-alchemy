@@ -1,6 +1,7 @@
 const Feature = require('../Feature')
 
 module.exports = new Feature({
+  priority: 2,
   files () {
     return [{
       source: '../templates/webpack/logo.svg',

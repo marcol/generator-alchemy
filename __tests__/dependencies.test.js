@@ -5,17 +5,20 @@ const rimraf = require('rimraf')
 const testPath = path.join(__dirname, 'tmp-dependencies')
 const packageJSON = path.join(testPath, 'package.json')
 const features = require('../generators/app/features')
-const prompts = require('../__mocks__/prompts')
 const { silent } = require('sugar-chalk')
-const options = prompts
+const options = {
+  styles: 'normalize',
+  ...require('../__mocks__/prompts')
+}
 let dependencies = []
 let devDependencies = []
 
 features.forEach((cur) => {
   const feat = require('../generators/app/features/' + cur)
+  const gen = { answers: options }
   options[cur] = true
-  dependencies = dependencies.concat(feat.dependencies())
-  devDependencies = devDependencies.concat(feat.devDependencies())
+  dependencies = dependencies.concat(feat.dependencies(gen))
+  devDependencies = devDependencies.concat(feat.devDependencies(gen))
 })
 
 describe('Tests eslint', function () {

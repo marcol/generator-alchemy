@@ -5,8 +5,13 @@ module.exports = (gen) => {
 
   const features = require('../features')
   const prompts = features.map((cur) => {
-    return require('../features/' + cur).prompt(gen)
+    const feat = require('../features/' + cur)
+    return {
+      prompt: feat.prompt(gen),
+      priority: feat.priority()
+    }
   })
 
-  return prompts.flat()
+  prompts.sort((a, b) => a.priority - b.priority)
+  return prompts.map((cur) => cur.prompt).flat()
 }
