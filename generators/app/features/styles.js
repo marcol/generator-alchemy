@@ -14,6 +14,9 @@ module.exports = new Feature({
         deps.pus('sass-loader', 'sass', 'extract-loader')
       }
       break
+    case 'materialize':
+      deps.push('materialize-css@next')
+      break
     case 'foundation':
       deps.push('foundation-sites')
       break
@@ -29,6 +32,7 @@ module.exports = new Feature({
       choices: [
         { name: 'Normalize.css', value: 'normalize' },
         { name: 'Material Design', value: 'material' },
+        { name: 'Materialize', value: 'materialize' },
         { name: 'Foundation', value: 'foundation' },
         { name: 'None', value: 'none' }
       ],
