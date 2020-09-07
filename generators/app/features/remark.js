@@ -1,20 +1,24 @@
-module.exports = {
-  files: [{
-    source: '../templates/_.remarkrc.js',
-    target: '.remarkrc.js'
-  }],
-  dependencies: [],
-  devDependencies: [
-    'remark-cli',
-    'remark-preset-lint-recommended'
-  ],
-  scripts: {
-    'lint:md': 'remark .'
+const Feature = require('../Feature')
+
+module.exports = new Feature({
+  files () {
+    return [{
+      source: '../templates/_.remarkrc.js',
+      target: '.remarkrc.js'
+    }]
   },
-  settings () {
-    return {}
+  devDependencies () {
+    return [
+      'remark-cli',
+      'remark-preset-lint-recommended'
+    ]
   },
-  prompt: (get) => {
+  scripts () {
+    return {
+      'lint:md': 'remark .'
+    }
+  },
+  prompt (get) {
     return [{
       type: 'confirm',
       name: 'remark',
@@ -22,4 +26,4 @@ module.exports = {
       default: true
     }]
   }
-}
+})

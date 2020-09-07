@@ -12,9 +12,9 @@ module.exports = (gen) => {
     const feat = require('../features/' + cur)
     const feature = cur.replace('.js', '')
 
-    if (gen.answers[feature] || feat.default) {
-      dependencies = dependencies.concat(feat.dependencies)
-      devDependencies = devDependencies.concat(feat.devDependencies)
+    if (gen.answers[feature] || feat.default()) {
+      dependencies = dependencies.concat(feat.dependencies(gen))
+      devDependencies = devDependencies.concat(feat.devDependencies(gen))
     }
   })
 

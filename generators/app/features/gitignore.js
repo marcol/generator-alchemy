@@ -1,15 +1,13 @@
-module.exports = {
-  files: [{
-    source: '../templates/_.gitignore',
-    target: '.gitignore'
-  }],
-  dependencies: [],
-  devDependencies: [],
-  scripts: {},
-  settings () {
-    return {}
+const Feature = require('../Feature')
+
+module.exports = new Feature({
+  files () {
+    return [{
+      source: '../templates/_.gitignore',
+      target: '.gitignore'
+    }]
   },
-  prompt: (get) => {
+  prompt (get) {
     return [{
       type: 'confirm',
       name: 'gitignore',
@@ -17,4 +15,4 @@ module.exports = {
       default: true
     }]
   }
-}
+})

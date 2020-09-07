@@ -31,7 +31,7 @@ describe('Tests CSS linting', function () {
   })
 
   test('checks if stylelint file is present', () => {
-    const files = config.files.map((cur) => cur.target)
+    const files = config.files().map((cur) => cur.target)
     assert.file(files)
   })
 

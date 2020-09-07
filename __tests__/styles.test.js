@@ -30,7 +30,7 @@ describe('Tests styles', function () {
   })
 
   test('checks if styling files are present', () => {
-    const files = config.files.map((cur) => cur.target)
+    const files = config.files().map((cur) => cur.target)
     assert.file(files)
   })
 })

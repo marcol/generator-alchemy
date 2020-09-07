@@ -5,7 +5,6 @@ const rimraf = require('rimraf')
 const feature = 'github'
 const testPath = path.join(__dirname, 'tmp-' + feature)
 const config = require('../generators/app/features/' + feature)
-const files = config.files.map((cur) => cur.target)
 const prompts = require('../__mocks__/prompts')
 const { silent } = require('sugar-chalk')
 
@@ -31,6 +30,7 @@ describe('Tests github workflows feature', function () {
   })
 
   test('checks if workflows files is present', () => {
+    const files = config.files().map((cur) => cur.target)
     assert.file(files)
   })
 })

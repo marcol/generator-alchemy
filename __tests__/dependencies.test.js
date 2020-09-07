@@ -14,8 +14,8 @@ let devDependencies = []
 features.forEach((cur) => {
   const feat = require('../generators/app/features/' + cur)
   options[cur] = true
-  dependencies = dependencies.concat(feat.dependencies)
-  devDependencies = devDependencies.concat(feat.devDependencies)
+  dependencies = dependencies.concat(feat.dependencies())
+  devDependencies = devDependencies.concat(feat.devDependencies())
 })
 
 describe('Tests eslint', function () {

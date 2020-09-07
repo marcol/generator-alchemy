@@ -1,12 +1,10 @@
+const Feature = require('../Feature')
 const slugify = require('@sindresorhus/slugify')
 
-module.exports = {
+module.exports = new Feature({
   default: true,
-  files: [],
-  dependencies: [],
-  devDependencies: [],
-  scripts: {},
-  settings (data) {
+  settings (gen) {
+    const data = gen.answers
     return {
       name: slugify(data.name),
       version: '0.1.0',
@@ -41,4 +39,4 @@ module.exports = {
       }
     ]
   }
-}
+})

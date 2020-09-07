@@ -1,18 +1,24 @@
-module.exports = {
-  files: [{
-    source: '../templates/_.stylelintrc.json',
-    target: '.stylelintrc.json'
-  }],
-  dependencies: [],
-  devDependencies: [
-    'stylelint',
-    'stylelint-config-standard'
-  ],
-  scripts: {
-    'lint:css': 'stylelint **/*.css'
+const Feature = require('../Feature')
+
+module.exports = new Feature({
+  files () {
+    return [{
+      source: '../templates/_.stylelintrc.json',
+      target: '.stylelintrc.json'
+    }]
   },
-  settings () {},
-  prompt: (get) => {
+  scripts () {
+    return {
+      'lint:css': 'stylelint **/*.css'
+    }
+  },
+  devDependencies () {
+    return [
+      'stylelint',
+      'stylelint-config-standard'
+    ]
+  },
+  prompt (get) {
     return [{
       type: 'confirm',
       name: 'css',
@@ -20,4 +26,4 @@ module.exports = {
       default: true
     }]
   }
-}
+})

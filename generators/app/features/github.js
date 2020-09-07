@@ -1,16 +1,16 @@
-module.exports = {
-  files: [{
-    source: '../templates/_.github/workflows/ci.yml',
-    target: '.github/workflows/ci.yml'
-  }, {
-    source: '../templates/_.github/workflows/publish.yml',
-    target: '.github/workflows/ci.yml'
-  }],
-  dependencies: [],
-  devDependencies: [],
-  scripts: {},
-  settings () {},
-  prompt: (get) => {
+const Feature = require('../Feature')
+
+module.exports = new Feature({
+  files () {
+    return [{
+      source: '../templates/_.github/workflows/ci.yml',
+      target: '.github/workflows/ci.yml'
+    }, {
+      source: '../templates/_.github/workflows/publish.yml',
+      target: '.github/workflows/ci.yml'
+    }]
+  },
+  prompt (get) {
     return [{
       type: 'confirm',
       name: 'github',
@@ -18,4 +18,4 @@ module.exports = {
       default: true
     }]
   }
-}
+})

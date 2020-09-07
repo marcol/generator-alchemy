@@ -1,18 +1,16 @@
-module.exports = {
-  files: [{
-    source: '../templates/_.npmignore',
-    target: '.gitignore'
-  }, {
-    source: '../templates/_.npmrc',
-    target: '.gitrc'
-  }],
-  dependencies: [],
-  devDependencies: [],
-  scripts: {},
-  settings () {
-    return {}
+const Feature = require('../Feature')
+
+module.exports = new Feature({
+  files () {
+    return [{
+      source: '../templates/_.npmignore',
+      target: '.gitignore'
+    }, {
+      source: '../templates/_.npmrc',
+      target: '.gitrc'
+    }]
   },
-  prompt: (get) => {
+  prompt (get) {
     return [{
       type: 'confirm',
       name: 'npm',
@@ -20,4 +18,4 @@ module.exports = {
       default: true
     }]
   }
-}
+})

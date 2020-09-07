@@ -30,7 +30,7 @@ describe('Tests gitignore functionality', function () {
   })
 
   test('checks if gitignore file is present', () => {
-    const files = config.files.map((cur) => cur.target)
+    const files = config.files().map((cur) => cur.target)
     assert.file(files)
   })
 })

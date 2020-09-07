@@ -1,15 +1,22 @@
-module.exports = {
-  files: [{
-    source: '../templates/_jest-example.js',
-    target: '__tests__/example.test.js'
-  }],
-  dependencies: [],
-  devDependencies: [
-    'jest',
-    'eslint-plugin-jest'
-  ],
-  scripts: {
-    test: 'jest'
+const Feature = require('../Feature')
+
+module.exports = new Feature({
+  files () {
+    return [{
+      source: '../templates/_jest-example.js',
+      target: '__tests__/example.test.js'
+    }]
+  },
+  devDependencies () {
+    return [
+      'jest',
+      'eslint-plugin-jest'
+    ]
+  },
+  scripts () {
+    return {
+      test: 'jest'
+    }
   },
   settings () {
     return {
@@ -26,7 +33,7 @@ module.exports = {
       ]
     }
   },
-  prompt: (get) => {
+  prompt (get) {
     return [{
       type: 'confirm',
       name: 'jest',
@@ -34,4 +41,4 @@ module.exports = {
       default: true
     }]
   }
-}
+})

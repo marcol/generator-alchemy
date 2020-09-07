@@ -31,7 +31,7 @@ describe('Tests remark lint functionality', function () {
   })
 
   test('checks if remark file is present', () => {
-    const files = config.files.map((cur) => cur.target)
+    const files = config.files().map((cur) => cur.target)
     assert.file(files)
   })
 

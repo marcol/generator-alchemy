@@ -1,23 +1,30 @@
-module.exports = {
-  files: [{
-    source: '../templates/_.commitlintrc.json',
-    target: '.commitlintrc.json'
-  }, {
-    source: '../templates/_ci.js',
-    target: 'ci.js'
-  }],
-  dependencies: [],
-  devDependencies: [
-    '@commitlint/cli',
-    '@commitlint/config-conventional',
-    'husky',
-    'shelljs',
-    'sugar-chalk'
-  ],
-  scripts: {
-    test: 'exit 0',
-    lint: 'exit 0',
-    ci: 'node ci.js'
+const Feature = require('../Feature')
+
+module.exports = new Feature({
+  files () {
+    return [{
+      source: '../templates/_.commitlintrc.json',
+      target: '.commitlintrc.json'
+    }, {
+      source: '../templates/_ci.js',
+      target: 'ci.js'
+    }]
+  },
+  devDependencies () {
+    return [
+      '@commitlint/cli',
+      '@commitlint/config-conventional',
+      'husky',
+      'shelljs',
+      'sugar-chalk'
+    ]
+  },
+  scripts () {
+    return {
+      test: 'exit 0',
+      lint: 'exit 0',
+      ci: 'node ci.js'
+    }
   },
   settings () {
     return {
@@ -30,7 +37,7 @@ module.exports = {
       }
     }
   },
-  prompt: (get) => {
+  prompt (get) {
     return [{
       type: 'confirm',
       name: 'githooks',
@@ -38,4 +45,4 @@ module.exports = {
       default: true
     }]
   }
-}
+})

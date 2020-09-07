@@ -31,7 +31,7 @@ describe('Tests githooks functionality', function () {
   })
 
   test('checks if githooks files are present', () => {
-    const files = config.files.map((cur) => cur.target)
+    const files = config.files().map((cur) => cur.target)
     assert.file(files)
   })
 

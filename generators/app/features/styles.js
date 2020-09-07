@@ -1,17 +1,23 @@
-module.exports = {
-  files: [],
-  dependencies: [],
-  devDependencies: [
-    'normalize.css'
-  ],
-  scripts: {},
-  settings () {},
-  prompt: (get) => {
+const Feature = require('../Feature')
+
+module.exports = new Feature({
+  devDependencies () {
+    return [
+      'normalize.css'
+    ]
+  },
+  prompt (get) {
     return [{
-      type: 'confirm',
+      type: 'checkbox',
       name: 'styles',
       message: 'What do you want to use for styling?',
+      choices: [
+        { name: 'Normalize.css', value: 'normalize' },
+        { name: 'Material Design', value: 'material' },
+        { name: 'Foundation', value: 'foundation' },
+        { name: 'None', value: 'none' }
+      ],
       default: true
     }]
   }
-}
+})

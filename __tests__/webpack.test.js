@@ -31,7 +31,7 @@ describe('Tests webpack', function () {
   })
 
   test('checks if webpack files are present', () => {
-    const files = config.files.map((cur) => cur.target)
+    const files = config.files().map((cur) => cur.target)
     assert.file(files)
   })
 
@@ -42,7 +42,7 @@ describe('Tests webpack', function () {
   })
 
   test('checks package.json webpack dependencies', () => {
-    config.dependencies.forEach((cur) => {
+    config.dependencies().forEach((cur) => {
       assert.fileContent(packageJSON, new RegExp(cur))
     })
   })

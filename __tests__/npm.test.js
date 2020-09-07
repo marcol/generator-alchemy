@@ -30,7 +30,7 @@ describe('Tests npm functionality', function () {
   })
 
   test('checks if npm file are present', () => {
-    const files = config.files.map((cur) => cur.target)
+    const files = config.files().map((cur) => cur.target)
     assert.file(files)
   })
 })

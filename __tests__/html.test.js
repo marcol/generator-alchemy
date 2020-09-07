@@ -31,7 +31,7 @@ describe('Tests HTML linting', function () {
   })
 
   test('checks if htmlhint file is present', () => {
-    const files = config.files.map((cur) => cur.target)
+    const files = config.files().map((cur) => cur.target)
     assert.file(files)
   })
 
