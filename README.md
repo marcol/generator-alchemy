@@ -28,8 +28,10 @@ and follow the instruction, selecting the preferred options.
 
 ## Features
 
-### License
+## License
 Adds a [ISC license](https://en.wikipedia.org/wiki/ISC_license) file with the name and email of the author.
+
+## Configuration and linting files
 
 ### JS linting
 Adds [eslint](https://eslint.org/) with `eslintrc.json` and `eslintignore` configuration files. Installs eslint basic plugins. Sets [JavaScript Standard Style](https://standardjs.com/) as default. The script `lint:js` is added to `package.json`.
@@ -46,14 +48,14 @@ HTML liting is done with [htmlhint](https://htmlhint.com/docs/user-guide/getting
 ### githooks
 Set githooks for commit and push. Adds linting to git commit through [commitlint](https://commitlint.js.org/#/). Also adds script `ci.js` to run on push.
 
-### github worflows
-Adds two [github workflows](https://docs.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow), one for ci and another to publish the npm package. In order to publish tha package you need to define `secrets.NPM_TOKEN`, you can get this token in your account on [npmjs.com](https://www.npmjs.com/).
+### gitignore
+Adds `.gitignore` file to prevent tracking of wanted files or folder. It has already a set of common files that usually should not be part of the git repository.
 
 ### npm
 Adds `.npmignore` file to remove assets from the package to be published, as default `__tests__` and `__mocks__` are removed. Also adds `.npmrc` file.
 
-### gitignore
-Adds `.gitignore` file to prevent tracking of wanted files or folder. It has already a set of common files that usually should not be part of the git repository.
+## github worflows
+Adds two [github workflows](https://docs.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow), one for ci and another to publish the npm package. In order to publish tha package you need to define `secrets.NPM_TOKEN`, you can get this token in your account on [npmjs.com](https://www.npmjs.com/).
 
 ### Jest
 Sets up [jest](https://jestjs.io/) to be used for tests, with an example test. Also adds the test script.
