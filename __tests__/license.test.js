@@ -6,7 +6,7 @@ const feature = 'license'
 const testPath = path.join(__dirname, 'tmp-' + feature)
 const packageJSON = path.join(testPath, 'package.json')
 const config = require('../generators/app/features/' + feature)
-const files = config.files.map((cur) => cur.target)
+const files = config.files().map((cur) => cur.target)
 const prompts = require('../__mocks__/prompts')
 const { silent } = require('sugar-chalk')
 
@@ -44,7 +44,6 @@ describe('Tests license functionality', function () {
   })
 
   test('checks if license has author email', () => {
-    console.log('here', prompts.email)
     assert.fileContent(files[0], prompts.email)
   })
 })

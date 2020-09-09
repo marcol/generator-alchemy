@@ -31,12 +31,12 @@ describe('Tests gitignore functionality', function () {
   })
 
   test('checks if jest example is present', () => {
-    const files = config.files.map((cur) => cur.target)
+    const files = config.files().map((cur) => cur.target)
     assert.file(files)
   })
 
   test('checks if jest depdencies were installed', () => {
-    config.dependencies.forEach((cur) => {
+    config.dependencies().forEach((cur) => {
       assert.fileContent(packageJSON, new RegExp(cur))
     })
   })

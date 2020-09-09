@@ -17,10 +17,10 @@ module.exports = (gen) => {
     const feat = require('../features/' + cur)
     const feature = cur.replace('.js', '')
 
-    if (gen.answers[feature] || feat.default) {
-      Object.assign(packageJSON, feat.settings(gen.answers))
-      Object.assign(packageJSON.scripts, feat.scripts)
-      files = files.concat(feat.files)
+    if (gen.answers[feature] || (feat.default && feat.default())) {
+      Object.assign(packageJSON, feat.settings(gen))
+      Object.assign(packageJSON.scripts, feat.scripts(gen))
+      files = files.concat(feat.files(gen))
     }
   })
 

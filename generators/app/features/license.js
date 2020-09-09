@@ -1,17 +1,18 @@
-module.exports = {
-  files: [{
-    source: '../templates/_LICENSE',
-    target: 'LICENSE'
-  }],
-  dependencies: [],
-  devDependencies: [],
-  scripts: {},
+const Feature = require('../Feature')
+
+module.exports = new Feature({
+  files () {
+    return [{
+      source: '../templates/_LICENSE',
+      target: 'LICENSE'
+    }]
+  },
   settings () {
     return {
       license: 'ISC'
     }
   },
-  prompt: (get) => {
+  prompt () {
     return [{
       type: 'confirm',
       name: 'license',
@@ -19,4 +20,4 @@ module.exports = {
       default: true
     }]
   }
-}
+})

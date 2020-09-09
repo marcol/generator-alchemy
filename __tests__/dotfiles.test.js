@@ -2,19 +2,17 @@ const assert = require('yeoman-assert')
 const helpers = require('yeoman-test')
 const path = require('path')
 const rimraf = require('rimraf')
-const feature = 'styles'
+const { silent } = require('sugar-chalk')
+const feature = 'dotfiles'
 const testPath = path.join(__dirname, 'tmp-' + feature)
+const packageJSON = path.join(testPath, 'package.json')
 const config = require('../generators/app/features/' + feature)
 const options = {
-  styles: {
-    webpack: true,
-    material: true
-  },
+  ...require('../__mocks__/dotfiles'),
   ...require('../__mocks__/prompts')
 }
-const { silent } = require('sugar-chalk')
 
-describe('Tests styles', function () {
+describe('Tests configuration files', function () {
   beforeAll(async (done) => {
     silent(true)
 
@@ -33,8 +31,19 @@ describe('Tests styles', function () {
     rimraf.sync(testPath)
   })
 
-  test('checks if styling files are present', () => {
+  test('checks if configuration files are present', () => {
     const files = config.files({ answers: options }).map((cur) => cur.target)
     assert.file(files)
+  })
+
+  test('checks package.json configuration settings', () => {
+    assert.jsonFileContent(packageJSON, config.settings({ answers: options }))
+  })
+
+  test('checks package.json scripts', () => {
+    assert.fileContent(packageJSON, new RegExp('lint:css'))
+    assert.fileContent(packageJSON, new RegExp('lint:js'))
+    assert.fileContent(packageJSON, new RegExp('lint:html'))
+    assert.fileContent(packageJSON, new RegExp('lint:md'))
   })
 })
