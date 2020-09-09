@@ -7,8 +7,9 @@ const packageJSON = path.join(testPath, 'package.json')
 const features = require('../generators/app/features')
 const { silent } = require('sugar-chalk')
 const options = {
-  styles: 'normalize',
-  ...require('../__mocks__/prompts')
+  styles: { normalize: true },
+  ...require('../__mocks__/prompts'),
+  ...require('../__mocks__/dotfiles')
 }
 let dependencies = []
 let devDependencies = []
@@ -16,7 +17,7 @@ let devDependencies = []
 features.forEach((cur) => {
   const feat = require('../generators/app/features/' + cur)
   const gen = { answers: options }
-  options[cur] = true
+  options[cur] = options[cur] || true
   dependencies = dependencies.concat(feat.dependencies(gen))
   devDependencies = devDependencies.concat(feat.devDependencies(gen))
 })

@@ -36,7 +36,7 @@ module.exports = new Feature({
         { name: 'Foundation', value: 'foundation' },
         { name: 'None', value: 'none' }
       ],
-      default: true
+      default: 'normalize'
     }]
   }
 })

@@ -1,4 +1,4 @@
-const Feature = require('../Feature')
+const Feature = require('../../Feature')
 
 module.exports = new Feature({
   files () {
